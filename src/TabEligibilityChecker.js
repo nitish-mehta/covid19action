@@ -7,39 +7,91 @@ import "@ui5/webcomponents/dist/Switch";
 const TabEligibilityChecker = () => {
   return (
     <div>
-      <div>Please mark all the symptoms you are currently facing:</div>
+      <div>Please mark all the symptoms that you are currently facing:</div>
 
       <div class="eligibilityCheckerForm">
-        <div>
-          <ui5-label class="formLabel">Do you currently have fever?</ui5-label>{" "}
-          <ui5-switch class="formSwitch" graphical></ui5-switch>
-        </div>
-        <div>
-          <ui5-label class="formLabel">Cough?</ui5-label>{" "}
-          <ui5-switch class="formSwitch" graphical></ui5-switch>
-        </div>
-        <div>
-          <ui5-label class="formLabel">Cold ?</ui5-label>{" "}
-          <ui5-switch class="formSwitch" graphical></ui5-switch>
-        </div>
-        <div>
-          <ui5-label class="formLabel">
-            Have you travelled recently outside India in last 14 days?
+        <div class="formRow">
+          <ui5-label class="formLabel" wrap>
+            Fever :
           </ui5-label>
-          <ui5-switch class="formSwitch" graphical></ui5-switch>
+          <ui5-switch
+            text-on="Yes"
+            text-off="No"
+            class="formSwitch"
+            graphical
+          ></ui5-switch>
         </div>
-        <div>
-          <ui5-label class="formLabel">
-            Have you been in contact with any confirmed patient?
+        <div class="formRow">
+          <ui5-label class="formLabel" wrap>
+            Runny Nose:
           </ui5-label>
-          <ui5-switch class="formSwitch" graphical></ui5-switch>
+          <ui5-switch
+            text-on="Yes"
+            text-off="No"
+            class="formSwitch"
+            graphical
+          ></ui5-switch>
+        </div>
+        <div class="formRow">
+          <ui5-label class="formLabel" wrap>
+            Sore Throat:
+          </ui5-label>
+          <ui5-switch
+            text-on="Yes"
+            text-off="No"
+            class="formSwitch"
+            graphical
+          ></ui5-switch>
+        </div>
+        <div class="formRow">
+          <ui5-label class="formLabel" wrap>
+            Cough:
+          </ui5-label>
+          <ui5-switch
+            text-on="Yes"
+            text-off="No"
+            class="formSwitch"
+            graphical
+          ></ui5-switch>
+        </div>
+        <div class="formRow">
+          <ui5-label class="formLabel" wrap>
+            Difficulty breathing:
+          </ui5-label>
+          <ui5-switch
+            text-on="Yes"
+            text-off="No"
+            class="formSwitch"
+            graphical
+          ></ui5-switch>
+        </div>
+        <div>Additional Information:</div>
+        <div class="formRow">
+          <ui5-label class="formLabel" wrap>
+            Have you visited any COVID-19 affected countries in last 14 days?
+          </ui5-label>
+          <ui5-switch
+            text-on="Yes"
+            text-off="No"
+            class="formSwitch"
+          ></ui5-switch>
+        </div>
+        <div class="formRow">
+          <ui5-label class="formLabel" wrap>
+            Have you been in contact with any confirmed positive case?
+          </ui5-label>
+          <ui5-switch
+            text-on="Yes"
+            text-off="No"
+            class="formSwitch"
+          ></ui5-switch>
         </div>
       </div>
-      <ui5-button design="Emphasized">Can I get tested?</ui5-button>
-
-      <div>
-        Result: You currently cannot get tested at the medical facility.
-      </div>
+      <br />
+      <br />
+      <ui5-button disabled design="Emphasized" class="eligibilityBtn">
+        What should I do?
+      </ui5-button>
     </div>
   );
 };
