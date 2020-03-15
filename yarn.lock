@@ -1472,6 +1472,44 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
+"@ui5/webcomponents-base@0.18.0":
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/@ui5/webcomponents-base/-/webcomponents-base-0.18.0.tgz#e4da67a1045f729e9d6e92fcc7b86e34e3593e38"
+  integrity sha512-/mwF95aqhMR09+7gv0hSlfCxUpht889jYcAaTk0UHgie30o5rJXQGjQ96rexPUWvjmQ6IZNiGwmLMcOunqCFhA==
+  dependencies:
+    "@ui5/webcomponents-core" "0.18.0"
+    css-vars-ponyfill "^2.1.2"
+    lit-html "^1.0.0"
+    regenerator-runtime "0.12.1"
+    url-search-params-polyfill "^5.0.0"
+
+"@ui5/webcomponents-core@0.18.0":
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/@ui5/webcomponents-core/-/webcomponents-core-0.18.0.tgz#da0ed4ef2226c495e8572f6345abb7a25a1d1f2f"
+  integrity sha512-YZlUIRuanRzpRVfG5v3lY8I2KoCzt7dnLlKmmpfK9JG7XTR9TDIdriz1I20dAA/0EXkPQqfom3BnMgk98OihLA==
+
+"@ui5/webcomponents-icons@1.0.0-rc.5":
+  version "1.0.0-rc.5"
+  resolved "https://registry.yarnpkg.com/@ui5/webcomponents-icons/-/webcomponents-icons-1.0.0-rc.5.tgz#efd71be6eeae390261908f7b456faee2f4a17db4"
+  integrity sha512-yLxz8sY5QYHwAOCIEPB6/sJmL4qu+bTytx42neNaHxtjARLFZ435QGlSTa3WGwc+cH0Y1IsOb6F37aGOJsJhmg==
+  dependencies:
+    "@ui5/webcomponents-base" "0.18.0"
+
+"@ui5/webcomponents-theme-base@1.0.0-rc.5":
+  version "1.0.0-rc.5"
+  resolved "https://registry.yarnpkg.com/@ui5/webcomponents-theme-base/-/webcomponents-theme-base-1.0.0-rc.5.tgz#4c786d25c4e24c54b1a3159461a7435185b330ce"
+  integrity sha512-jrdu64nrw3d7ms/AZrLWe63FU0vL5zm0TuIILRRrGqAwux+xw8xNMrUyTh3G/GEWO2ay6+I4b6HHy+NVZybI+g==
+
+"@ui5/webcomponents@^1.0.0-rc.5":
+  version "1.0.0-rc.5"
+  resolved "https://registry.yarnpkg.com/@ui5/webcomponents/-/webcomponents-1.0.0-rc.5.tgz#4fd5098a064d15b041c5e8bf25612577dd2eb844"
+  integrity sha512-rZPnBLSSpWPDgxAyGAmmhLojDmCrGOsPf93u9Vqf8+M6fociru870WHW6hsjUO+By7YbNb/6eLuVu7z8Nh+pdw==
+  dependencies:
+    "@ui5/webcomponents-base" "0.18.0"
+    "@ui5/webcomponents-core" "0.18.0"
+    "@ui5/webcomponents-icons" "1.0.0-rc.5"
+    "@ui5/webcomponents-theme-base" "1.0.0-rc.5"
+
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.8.5.tgz#51b1c5fe6576a34953bf4b253df9f0d490d9e359"
@@ -3159,6 +3197,11 @@ css-unit-converter@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/css-unit-converter/-/css-unit-converter-1.1.1.tgz#d9b9281adcfd8ced935bdbaba83786897f64e996"
   integrity sha1-2bkoGtz9jO2TW9urqDeGiX9k6ZY=
+
+css-vars-ponyfill@^2.1.2:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/css-vars-ponyfill/-/css-vars-ponyfill-2.2.1.tgz#c97dcfb3efc93b479661af58afa04cb0ef5b97e6"
+  integrity sha512-bFdKEQbCtwoDl4/iPaqjGDMZRgnVn6k7c6XUlOrW+OzMIweWV6b5YbajR99dUiAsB1WpfbGGiiE9T1cnSh2pgA==
 
 css-what@2.1:
   version "2.1.3"
@@ -6169,6 +6212,11 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
+lit-html@^1.0.0:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-1.1.2.tgz#2e3560a7075210243649c888ad738eaf0daa8374"
+  integrity sha512-FFlUMKHKi+qG1x1iHNZ1hrtc/zHmfYTyrSvs3/wBTvaNtpZjOZGWzU7efGYVpgp6KvWeKF6ql9/KsCq6Z/mEDA==
+
 load-json-file@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-2.0.0.tgz#7947e42149af80d696cbf797bcaabcfe1fe29ca8"
@@ -8524,6 +8572,11 @@ regenerate@^1.4.0:
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.0.tgz#4a856ec4b56e4077c557589cae85e7a4c8869a11"
   integrity sha512-1G6jJVDWrt0rK99kBjvEtziZNCICAuvIPkSiUFIQxVP06RCVpq3dmDo2oi6ABpYaDYaTRr67BEhL8r1wgEZZKg==
 
+regenerator-runtime@0.12.1:
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
+  integrity sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
+
 regenerator-runtime@^0.11.0:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
@@ -9971,6 +10024,11 @@ url-parse@^1.4.3:
   dependencies:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
+
+url-search-params-polyfill@^5.0.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/url-search-params-polyfill/-/url-search-params-polyfill-5.1.0.tgz#f0405dcc2e921bf7f5fdf8c4e616f1e8088ef31b"
+  integrity sha512-yjFY7uw2xRf9e8Mg4ZVkZwtp8dMCC4cbBkEIZiTDpuSY2WJ9+Quw0wRhxncv32qaMQwmBQT+P847rO8PrFhhDA==
 
 url@^0.11.0:
   version "0.11.0"
