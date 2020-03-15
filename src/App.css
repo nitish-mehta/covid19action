@@ -1,3 +1,8 @@
 .App {
   text-align: center;
 }
+
+.formLabel {
+  height: var(--_ui5_switch_height);
+  vertical-align: middle;
+}
