@@ -3,7 +3,6 @@ import "./App.css";
 
 import TabEligibilityChecker from "./TabEligibilityChecker";
 import TabMoreInfo from "./TabMoreInfo";
-import TabTestCenters from "./TabTestCenters";
 
 import "@ui5/webcomponents/dist/Icon.js";
 import "@ui5/webcomponents-fiori/dist/ShellBar";
@@ -24,13 +23,10 @@ function App() {
         notification-count="22"
       ></ui5-shellbar>
       <ui5-tabcontainer class="full-width" show-overflow>
-        <ui5-tab icon="activities" text="Not well?" selected>
+        <ui5-tab text="Not well?" icon="stethoscope" selected>
           <TabEligibilityChecker />
         </ui5-tab>
-        <ui5-tab icon="calendar" text="Test Centers">
-          <TabTestCenters />
-        </ui5-tab>
-        <ui5-tab icon="calendar" text="Tell me more">
+        <ui5-tab text="More Info" icon="message-information">
           <TabMoreInfo />
         </ui5-tab>
       </ui5-tabcontainer>
