@@ -11,7 +11,7 @@ const TabEligibilityChecker = () => {
 
       <div class="eligibilityCheckerForm">
         <div>
-          <ui5-label class="formLabel">Fever?</ui5-label>{" "}
+          <ui5-label class="formLabel">Do you currently have fever?</ui5-label>{" "}
           <ui5-switch class="formSwitch" graphical></ui5-switch>
         </div>
         <div>
