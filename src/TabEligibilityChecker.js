@@ -4,6 +4,8 @@
 import "@ui5/webcomponents/dist/Switch";
 import React, { useReducer, useRef, useEffect } from "react";
 
+import { Button } from "@ui5/webcomponents-react/lib/Button";
+import { ButtonDesign } from "@ui5/webcomponents-react/lib/ButtonDesign";
 import "@ui5/webcomponents/dist/Label";
 import "@ui5/webcomponents/dist/Switch";
 
@@ -218,9 +220,14 @@ const TabEligibilityChecker = () => {
       </div>
       <br />
       <br />
-      <ui5-button design="Emphasized" ref={submitBtnRef} class="eligibilityBtn">
+      <Button
+        className="eligibilityBtn"
+        design={ButtonDesign.Emphasized}
+        // icon={"add"}
+        onClick={() => console.log(state)}
+      >
         What should I do?
-      </ui5-button>
+      </Button>
     </div>
   );
 };
