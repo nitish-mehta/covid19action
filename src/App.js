@@ -17,19 +17,20 @@ import "@ui5/webcomponents-icons/dist/json-imports/Icons.js";
 function App() {
   return (
     <div className="App">
-      <ui5-shellbar
-        primary-title="Corporate Portal"
-        show-co-pilot
-        notification-count="22"
-      ></ui5-shellbar>
-      <ui5-tabcontainer class="full-width" show-overflow>
-        <ui5-tab text="Not well?" icon="stethoscope" selected>
-          <TabEligibilityChecker />
-        </ui5-tab>
-        <ui5-tab text="More Info" icon="message-information">
-          <TabMoreInfo />
-        </ui5-tab>
-      </ui5-tabcontainer>
+      <div className="Covid19App">
+        <ui5-shellbar
+          primary-title="Covid-19 Assistant"
+          show-co-pilot
+        ></ui5-shellbar>
+        <ui5-tabcontainer show-overflow>
+          <ui5-tab text="Not well?" icon="stethoscope" selected>
+            <TabEligibilityChecker />
+          </ui5-tab>
+          <ui5-tab text="More Info" icon="message-information">
+            <TabMoreInfo />
+          </ui5-tab>
+        </ui5-tabcontainer>
+      </div>
     </div>
   );
 }
