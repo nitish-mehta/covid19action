@@ -1,4 +1,4 @@
-Minimalistic application to allow users to discover important information around covid19 (coronavirus) pandemic.
+Minimalistic application that allow users to discover important information around covid19 (coronavirus) pandemic and their eligibility to get tested.
 
 
 ## Reference Screenshots 
@@ -9,7 +9,7 @@ Minimalistic application to allow users to discover important information around
 
 - **Help localize** : As next steps, it's important to increase awareness amongst people. One of the ways to do that is have this application in local language. It would be great if you can help translate this app to your native language and share this tool with them.
 
-- **Outdated info?** : Please raise an issue or send a Pull Request with the fix. Time's have been changing really fast these days :)
+- **Outdated info?** : Please raise an issue or send a Pull Request with the fix. Things have been changing quicker than we expect lately :)
 
 - **Help Offline** : Spread this with people , take adequate precautions and most importantly **practice social distancing**
 
