@@ -14,7 +14,6 @@ import "@ui5/webcomponents/dist/Switch";
 const initialState = {
   fever: false,
   runnyNose: false,
-  soreThroat: false,
   cough: false,
   difficultyBreathing: false,
   relevantTravelHistory: false,
@@ -53,7 +52,6 @@ function reducer(state, action) {
 
 const TabEligibilityChecker = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(state);
   // manage ref and event
   const feverRef = useRef();
   useEffect(() => {
@@ -69,15 +67,6 @@ const TabEligibilityChecker = () => {
     if (runnyNoseRef.current) {
       runnyNoseRef.current.addEventListener("change", event =>
         dispatch({ type: "toggle", payload: "runnyNose" })
-      );
-    }
-  }, []);
-  // manage ref and event
-  const soreThroatRef = useRef();
-  useEffect(() => {
-    if (soreThroatRef.current) {
-      soreThroatRef.current.addEventListener("change", event =>
-        dispatch({ type: "toggle", payload: "soreThroat" })
       );
     }
   }, []);
@@ -119,24 +108,15 @@ const TabEligibilityChecker = () => {
     }
   }, []);
 
-  // manage ref and event for Submit Button
-  // TODO: Fix below to use latest state
-  const submitBtnRef = useRef();
-  useEffect(() => {
-    if (submitBtnRef.current) {
-      submitBtnRef.current.addEventListener("click", event => {
-        console.log(state);
-        if (state.relevantContact || state.relevantTravelHistory) {
-          alert("Maybe - Let's see more");
-        } else {
-          alert("Stay Home! ");
-        }
-      });
-    }
-  }, []);
-
   return (
     <div>
+      <ui5-label wrap>
+        Not feeling well? Use the below tool to check if you are eligible for
+        COVID-19 screening test in India.
+      </ui5-label>
+      <br />
+      <br />
+
       <div>Please mark all the symptoms that you are currently facing:</div>
 
       <div className="eligibilityCheckerForm">
@@ -166,19 +146,7 @@ const TabEligibilityChecker = () => {
             graphical
           ></ui5-switch>
         </div>
-        <div className="formRow">
-          <ui5-label class="formLabel" wrap>
-            Sore Throat:
-          </ui5-label>
-          <ui5-switch
-            ref={soreThroatRef}
-            text-on="Yes"
-            text-off="No"
-            class="formSwitch"
-            checked={state.soreThroat || undefined}
-            graphical
-          ></ui5-switch>
-        </div>
+
         <div className="formRow">
           <ui5-label class="formLabel" wrap>
             Cough:
@@ -194,7 +162,7 @@ const TabEligibilityChecker = () => {
         </div>
         <div className="formRow">
           <ui5-label class="formLabel" wrap>
-            Difficulty breathing:
+            Difficulty in breathing:
           </ui5-label>
           <ui5-switch
             ref={difficultyBreathingRef}
@@ -255,15 +223,14 @@ const TabEligibilityChecker = () => {
                 payload: {
                   text: "Get yourself screened.",
                   description:
-                    "As per the health ministry advisory, you should get yourself screened at the nearest CoronaVirus testing center. Check 'More Info' tab to find the nearest center and helpling number",
+                    "As per the health ministry advisory(dated 14-March-2020), you should get yourself tested at the nearest CoronaVirus testing center. Kindly call the central/local helpline number to share your details and understand testing protocols. Check 'info' tab to find the nearest testing center and helpling number.  ",
                   description2:
-                    "Keep yourself quarantined and take precautions at all times in the meantime",
-                  closeBtnText: "Close & Check Centers"
+                    "Keep yourself quarantined and take precautions at all times in the meanwhile.",
+                  closeBtnText: "Close & Check Helpline Number"
                 }
               });
             } else if (
               state.runnyNose ||
-              state.soreThroat ||
               state.difficultyBreathing ||
               state.cough
             ) {
@@ -272,11 +239,11 @@ const TabEligibilityChecker = () => {
               dispatch({
                 type: "updateResult",
                 payload: {
-                  text: "Self-Quarantine for 14 days",
+                  text: "Self-Quarantine for 14-days / Contact Helpline",
                   description:
-                    "As per the health ministry advisory (dated 9-March-2020), you are not yet eligible for the CoronaVirus screening test. You MUST self-quarantine yourself for a period of 14 days. In case you develop a fever, you should immediately get yourself tested for COVID-19.",
+                    "As per the health ministry advisory (dated 14-March-2020), you may not be eligible for the CoronaVirus screening test yet. Kindly call the central helpline  (available in next tab) to provide your details and get tested if possible. \n You MUST self-quarantine yourself for a period of 14 days. In case you develop a fever during this time, you should immediately get yourself tested for COVID-19.",
                   description2:
-                    "Kindly call the government helpline numbers (available in next tab) for a confirmation and best practices during quarantine period.",
+                    "Check out more information on quarantine practices and social distancing in the other tabs.",
                   closeBtnText: "Close & Check More Info"
                 }
               });
@@ -284,18 +251,17 @@ const TabEligibilityChecker = () => {
           } else if (
             state.fever ||
             state.runnyNose ||
-            state.soreThroat ||
             state.difficultyBreathing ||
             state.cough
           ) {
             // it's probably nothing - but better take precautions
-            // as per current advisory (9Mar2020), you should self quarantine
+            // as per current advisory, you should self quarantine
             dispatch({
               type: "updateResult",
               payload: {
                 text: "Self-Quarantine for 14 days",
                 description:
-                  "It's probably nothing - but you should take precautions. As per the health ministry advisory (dated 9-March-2020), you are not yet eligible for the CoronaVirus screening test and are advised to self-quarantine yourself for a period of 14 days. ",
+                  "It's probably nothing - but you must take precautions. As per the health ministry advisory (dated 14-March-2020), you are not yet eligible for the CoronaVirus screening test and are advised to self-quarantine yourself for a period of 14 days. You may call the central helpline number to share your details and get a secondary confirmation.",
                 description2:
                   "Kindly call the government helpline numbers (available in next tab) for a confirmation and best practices during quarantine period.",
                 closeBtnText: "Close & Check More Info"
@@ -309,7 +275,7 @@ const TabEligibilityChecker = () => {
               payload: {
                 text: "You are as fit as it gets!",
                 description:
-                  "You seem to be in good health. Practice social distancing and continue to keep yourself and others around you safe. ",
+                  "You seem to be in good health. Practice social distancing and continue to keep yourself & others around you safe. Check 'Social Distancing Simulator' & 'Why social distancing matters?' links in the next tab to understand why it matters.",
                 description2:
                   "Don't forget to educate others about the precautions and play the role of a savior in these troubled times :)",
                 closeBtnText: "Close"
