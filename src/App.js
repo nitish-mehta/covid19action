@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 
 import TabEligibilityChecker from "./TabEligibilityChecker";
+import TabIndiaInfo from "./TabIndiaInfo";
 import TabMoreInfo from "./TabMoreInfo";
 
 import { ThemeProvider } from "@ui5/webcomponents-react/lib/ThemeProvider";
@@ -29,7 +30,10 @@ function App() {
             <ui5-tab text="Not well?" icon="stethoscope" selected>
               <TabEligibilityChecker />
             </ui5-tab>
-            <ui5-tab text="More Info" icon="message-information">
+            <ui5-tab text="India" icon="message-information">
+              <TabIndiaInfo />
+            </ui5-tab>
+            <ui5-tab text="General" icon="globe">
               <TabMoreInfo />
             </ui5-tab>
           </ui5-tabcontainer>
