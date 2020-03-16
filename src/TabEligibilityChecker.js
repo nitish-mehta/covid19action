@@ -14,7 +14,6 @@ import "@ui5/webcomponents/dist/Switch";
 const initialState = {
   fever: false,
   runnyNose: false,
-  soreThroat: false,
   cough: false,
   difficultyBreathing: false,
   relevantTravelHistory: false,
@@ -68,15 +67,6 @@ const TabEligibilityChecker = () => {
     if (runnyNoseRef.current) {
       runnyNoseRef.current.addEventListener("change", event =>
         dispatch({ type: "toggle", payload: "runnyNose" })
-      );
-    }
-  }, []);
-  // manage ref and event
-  const soreThroatRef = useRef();
-  useEffect(() => {
-    if (soreThroatRef.current) {
-      soreThroatRef.current.addEventListener("change", event =>
-        dispatch({ type: "toggle", payload: "soreThroat" })
       );
     }
   }, []);
@@ -149,19 +139,7 @@ const TabEligibilityChecker = () => {
             graphical
           ></ui5-switch>
         </div>
-        <div className="formRow">
-          <ui5-label class="formLabel" wrap>
-            Sore Throat:
-          </ui5-label>
-          <ui5-switch
-            ref={soreThroatRef}
-            text-on="Yes"
-            text-off="No"
-            class="formSwitch"
-            checked={state.soreThroat || undefined}
-            graphical
-          ></ui5-switch>
-        </div>
+
         <div className="formRow">
           <ui5-label class="formLabel" wrap>
             Cough:
@@ -177,7 +155,7 @@ const TabEligibilityChecker = () => {
         </div>
         <div className="formRow">
           <ui5-label class="formLabel" wrap>
-            Difficulty breathing:
+            Difficulty in breathing:
           </ui5-label>
           <ui5-switch
             ref={difficultyBreathingRef}
@@ -246,7 +224,6 @@ const TabEligibilityChecker = () => {
               });
             } else if (
               state.runnyNose ||
-              state.soreThroat ||
               state.difficultyBreathing ||
               state.cough
             ) {
@@ -267,7 +244,6 @@ const TabEligibilityChecker = () => {
           } else if (
             state.fever ||
             state.runnyNose ||
-            state.soreThroat ||
             state.difficultyBreathing ||
             state.cough
           ) {

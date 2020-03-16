@@ -35,7 +35,7 @@
 
 .shellBarLeft {
   justify-content: flex-start;
-  margin-right: 3rem;
+  margin-right: 4rem;
 }
 
 .shellBarCenter {
@@ -46,16 +46,16 @@
 .shellBarRight {
   justify-content: end;
   align-items: center;
-  color: white;
   margin-right: 1rem;
   display: block;
+}
+
+.shellBarBtn {
+  color: white;
   background-color: transparent !important;
 }
 
-/*
------ Style overriding 
-*/
-
-.ui5-tc__headerItem {
-  color: red !important;
+.dialogFooterBtn {
+  display: flex;
+  align-self: center;
 }
