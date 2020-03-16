@@ -53,7 +53,6 @@ function reducer(state, action) {
 
 const TabEligibilityChecker = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(state);
   // manage ref and event
   const feverRef = useRef();
   useEffect(() => {
@@ -116,22 +115,6 @@ const TabEligibilityChecker = () => {
       relevantContactRef.current.addEventListener("change", event =>
         dispatch({ type: "toggle", payload: "relevantContact" })
       );
-    }
-  }, []);
-
-  // manage ref and event for Submit Button
-  // TODO: Fix below to use latest state
-  const submitBtnRef = useRef();
-  useEffect(() => {
-    if (submitBtnRef.current) {
-      submitBtnRef.current.addEventListener("click", event => {
-        console.log(state);
-        if (state.relevantContact || state.relevantTravelHistory) {
-          alert("Maybe - Let's see more");
-        } else {
-          alert("Stay Home! ");
-        }
-      });
     }
   }, []);
 

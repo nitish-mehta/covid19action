@@ -23,3 +23,39 @@
   display: flex;
   justify-content: center;
 }
+
+.headerShellBar {
+  background-color: #354a5f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  color: white;
+}
+
+.shellBarLeft {
+  justify-content: flex-start;
+  margin-right: 3rem;
+}
+
+.shellBarCenter {
+  justify-content: center;
+  align-items: center;
+}
+
+.shellBarRight {
+  justify-content: end;
+  align-items: center;
+  color: white;
+  margin-right: 1rem;
+  display: block;
+  background-color: transparent !important;
+}
+
+/*
+----- Style overriding 
+*/
+
+.ui5-tc__headerItem {
+  color: red !important;
+}
