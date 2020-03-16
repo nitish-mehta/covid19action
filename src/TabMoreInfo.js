@@ -48,6 +48,24 @@ const TabMoreInfo = () => {
             </ui5-link>
           </li>
         </ul>
+        <br />
+        <ui5-title level="H3">Useful tracking websites</ui5-title>
+        <ul>
+          <li>
+            <ui5-link href="https://covidout.in/" target="_blank" wrap>
+              https://covidout.in/
+            </ui5-link>
+          </li>
+          <li>
+            <ui5-link
+              href="https://www.worldometers.info/coronavirus/"
+              target="_blank"
+              wrap
+            >
+              https://www.worldometers.info/coronavirus/
+            </ui5-link>
+          </li>
+        </ul>
       </div>
     </div>
   );
