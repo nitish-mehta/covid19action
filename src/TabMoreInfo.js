@@ -7,62 +7,60 @@ const TabMoreInfo = () => {
   return (
     <div>
       <div>
-        <ui5-title level="H3">Test Centers (Across India)</ui5-title>
-        <ul>
-          <li>
-            <ui5-link
-              href="https://icmr.nic.in/sites/default/files/upload_documents/Testing_sites_for_COVID19.pdf"
-              target="_blank"
-            >
-              List of testing sites
-            </ui5-link>
-          </li>
-          <li>
-            <ui5-link
-              href="https://icmr.nic.in/sites/default/files/upload_documents/Sample_Collection_Lab_COVID19.pdf"
-              target="_blank"
-            >
-              Sample Collection Labs
-            </ui5-link>
-          </li>
-        </ul>
-        <br />
-        <ui5-title level="H3">Additional Info</ui5-title>
-        <ul>
-          <li>
-            <ui5-link
-              href="https://icmr.nic.in/content/covid-19"
-              target="_blank"
-              wrap
-            >
-              Details on COVID-19 by Indian Council of Medical Research
-            </ui5-link>
-          </li>
-          <li>
-            <ui5-link
-              href="https://icmr.nic.in/sites/default/files/upload_documents/Advisory_COVID19_9Mar2020.pdf"
-              target="_blank"
-              wrap
-            >
-              Infographic - Testing Strategy (9 March 2020)
-            </ui5-link>
-          </li>
-        </ul>
-        <br />
         <ui5-title level="H3">Useful tracking websites</ui5-title>
         <ul>
           <li>
+            <ui5-label>India:</ui5-label>{" "}
             <ui5-link href="https://covidout.in/" target="_blank" wrap>
               https://covidout.in/
             </ui5-link>
           </li>
           <li>
+            <ui5-label>Global:</ui5-label>{" "}
             <ui5-link
               href="https://www.worldometers.info/coronavirus/"
               target="_blank"
               wrap
             >
               https://www.worldometers.info/coronavirus/
+            </ui5-link>
+          </li>
+
+          <li>
+            <ui5-label>Global:</ui5-label>{" "}
+            <ui5-link
+              href="https://www.worldometers.info/coronavirus/"
+              target="_blank"
+              wrap
+            >
+              https://ncov2019.live/
+            </ui5-link>
+          </li>
+        </ul>
+        <ui5-title level="H3">Learn More & Share</ui5-title>
+        <ul>
+          <li>
+            <ui5-link
+              href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"
+              target="_blank"
+              wrap
+            >
+              WHO: Advice for Public
+            </ui5-link>
+          </li>
+          <br />
+          <li>
+            <ui5-link href="https://corona-azure.now.sh/" target="_blank" wrap>
+              Why social distancing matters?
+            </ui5-link>
+          </li>
+          <li>
+            <ui5-link
+              href="https://www.washingtonpost.com/graphics/2020/world/corona-simulator/"
+              target="_blank"
+              wrap
+            >
+              Social Distancing Simulator - Flatten the curve
             </ui5-link>
           </li>
         </ul>

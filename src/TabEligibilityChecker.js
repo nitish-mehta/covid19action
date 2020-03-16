@@ -240,8 +240,6 @@ const TabEligibilityChecker = () => {
           ></ui5-switch>
         </div>
       </div>
-      <br />
-      <br />
       <Button
         className="eligibilityBtn"
         design={ButtonDesign.Emphasized}
