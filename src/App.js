@@ -104,7 +104,7 @@ function App() {
                   target="_blank"
                   wrap
                 >
-                  GitHub
+                  GitHub{" "}
                 </ui5-link>
                 {i18n.WEBSITE_DESCRIPTION_3}
               </ui5-label>

@@ -5,15 +5,16 @@ import i18n_en from "./i18n_en.json";
 import i18n_bn from "./i18n_bn.json";
 import i18n_hi from "./i18n_hi.json";
 import i18n from "./i18n.json";
+import _ from "lodash";
 
 const changeCurrentLocale = locale => {
   switch (locale) {
     case "en":
-      return i18n_en;
+      return _.defaults(i18n_en, i18n);
     case "bn":
-      return i18n_bn;
+      return _.defaults(i18n_bn, i18n);
     case "hi":
-      return i18n_hi;
+      return _.defaults(i18n_hi, i18n);
     default:
       return i18n;
   }
