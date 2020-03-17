@@ -4,8 +4,6 @@
 import "@ui5/webcomponents/dist/Switch";
 import React, { useReducer, useRef, useEffect } from "react";
 
-import i18n from "./i18n/i18n.json";
-
 import { Button } from "@ui5/webcomponents-react/lib/Button";
 import { ButtonDesign } from "@ui5/webcomponents-react/lib/ButtonDesign";
 import { Dialog } from "@ui5/webcomponents-react/lib/Dialog";
@@ -45,14 +43,14 @@ function reducer(state, action) {
           : "",
         resultCloseBtnText: action.payload.closeBtnText
           ? action.payload.closeBtnText
-          : i18n.CLOSE
+          : "X"
       };
     default:
       throw new Error();
   }
 }
 
-const TabEligibilityChecker = () => {
+const TabEligibilityChecker = ({ i18n }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   // manage ref and event
   const feverRef = useRef();

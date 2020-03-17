@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import "./App.css";
 
-import i18n from "./i18n/i18n.json";
+import localeHandler from "./i18n/loadText.js";
 
 import TabEligibilityChecker from "./TabEligibilityChecker";
 import TabIndiaInfo from "./TabIndiaInfo";
@@ -19,11 +19,14 @@ import { ButtonDesign } from "@ui5/webcomponents-react/lib/ButtonDesign";
 import { Dialog } from "@ui5/webcomponents-react/lib/Dialog";
 
 const initialState = {
-  isHelpDialogOpen: false
+  isHelpDialogOpen: false,
+  i18n: localeHandler("en")
 };
 
 function reducer(state, action) {
   switch (action.type) {
+    case "i18nChange":
+      return { ...state, i18n: action.payload };
     case "openDialog":
       return { ...state, isHelpDialogOpen: true };
     case "closeDialog":
@@ -35,7 +38,8 @@ function reducer(state, action) {
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  const i18n = state.i18n;
+  console.log(state);
   return (
     <ThemeProvider>
       <div className="App">
@@ -50,24 +54,29 @@ function App() {
                 className="shellBarBtn"
                 onClick={() => dispatch({ type: "openDialog" })}
               ></Button>
-              {/* <Button
+              <Button
                 design={ButtonDesign.Transparent}
-                icon={"action"}
+                icon={"world"}
                 className="shellBarBtn"
-                onClick={() => {}}
-              ></Button> */}
+                onClick={() => {
+                  dispatch({
+                    type: "i18nChange",
+                    payload: localeHandler("hi")
+                  });
+                }}
+              ></Button>
             </div>
           </div>
 
           <ui5-tabcontainer class="c19IconTab" show-overflow>
             <ui5-tab text={i18n.UNWELL} icon="stethoscope" selected>
-              <TabEligibilityChecker />
+              <TabEligibilityChecker i18n={i18n} />
             </ui5-tab>
             <ui5-tab text={i18n.INDIA} icon="hint">
-              <TabIndiaInfo />
+              <TabIndiaInfo i18n={i18n} />
             </ui5-tab>
             <ui5-tab text="" icon="globe">
-              <TabMoreInfo />
+              <TabMoreInfo i18n={i18n} />
             </ui5-tab>
           </ui5-tabcontainer>
 

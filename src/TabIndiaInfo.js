@@ -1,15 +1,13 @@
 import React from "react";
 
-import i18n from "./i18n/i18n.json";
-
 import "@ui5/webcomponents/dist/Label";
 import "@ui5/webcomponents/dist/Link";
 
-const TabIndiaInfo = () => {
+const TabIndiaInfo = ({ i18n }) => {
   return (
     <div>
       <div>
-        <ui5-title level="H3">Important Websites </ui5-title>
+        <ui5-title level="H3">{i18n.IMPORTANT_WEBSITES} </ui5-title>
         <ul>
           <li>
             <ui5-label>{i18n.T_INDIA_WEBSITE}</ui5-label>
@@ -105,7 +103,7 @@ const TabIndiaInfo = () => {
               target="_blank"
               wrap
             >
-              When to get tested? (English)
+              When to get tested?
             </ui5-link>
           </li>
 
@@ -117,7 +115,7 @@ const TabIndiaInfo = () => {
               target="_blank"
               wrap
             >
-              {i18n.WHEN_TO_GET_TESTED_HINDI}
+              परीक्षण कब करवाना है?
             </ui5-link>
           </li>
           <li>

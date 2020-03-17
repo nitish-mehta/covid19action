@@ -1,10 +1,9 @@
 import React from "react";
 
-import i18n from "./i18n/i18n.json";
 import "@ui5/webcomponents/dist/Label";
 import "@ui5/webcomponents/dist/Link";
 
-const TabMoreInfo = () => {
+const TabMoreInfo = ({ i18n }) => {
   return (
     <div>
       <div>
