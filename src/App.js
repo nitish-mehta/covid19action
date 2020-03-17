@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import "./App.css";
 
-import localeHandler from "./i18n/loadText.js";
+import { changeCurrentLocale, currentLocale } from "./i18n/loadText.js";
 
 import TabEligibilityChecker from "./TabEligibilityChecker";
 import TabIndiaInfo from "./TabIndiaInfo";
@@ -20,7 +20,7 @@ import { Dialog } from "@ui5/webcomponents-react/lib/Dialog";
 
 const initialState = {
   isHelpDialogOpen: false,
-  i18n: localeHandler("en")
+  i18n: changeCurrentLocale("en")
 };
 
 function reducer(state, action) {
@@ -50,20 +50,22 @@ function App() {
             <div className="shellBarRight">
               <Button
                 design={ButtonDesign.Transparent}
-                icon={"sys-help"}
-                className="shellBarBtn"
-                onClick={() => dispatch({ type: "openDialog" })}
-              ></Button>
-              <Button
-                design={ButtonDesign.Transparent}
-                icon={"world"}
                 className="shellBarBtn"
                 onClick={() => {
+                  const sNewLocaleCode = currentLocale === "hi" ? "en" : "hi"; // TODO: Enhance with more languages
                   dispatch({
                     type: "i18nChange",
-                    payload: localeHandler("hi")
+                    payload: changeCurrentLocale(sNewLocaleCode)
                   });
                 }}
+              >
+                {i18n.TOGGLE_LANGUAGE}
+              </Button>
+              <Button
+                design={ButtonDesign.Transparent}
+                icon={"sys-help"}
+                className="shellBarIconBtn"
+                onClick={() => dispatch({ type: "openDialog" })}
               ></Button>
             </div>
           </div>
