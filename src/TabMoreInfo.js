@@ -1,5 +1,6 @@
 import React from "react";
 
+import i18n from "./i18n/i18n.json";
 import "@ui5/webcomponents/dist/Label";
 import "@ui5/webcomponents/dist/Link";
 
@@ -7,7 +8,7 @@ const TabMoreInfo = () => {
   return (
     <div>
       <div>
-        <ui5-title level="H3">Useful tracking websites</ui5-title>
+        <ui5-title level="H3">{i18n.USEFUL_TRACKING_WEBSITES}</ui5-title>
         <ul>
           <li>
             <ui5-label>[India]</ui5-label>{" "}
@@ -35,7 +36,7 @@ const TabMoreInfo = () => {
             </ui5-link>
           </li>
         </ul>
-        <ui5-title level="H3">Learn More & Share</ui5-title>
+        <ui5-title level="H3">{i18n.LEARN_AND_SHARE}</ui5-title>
         <ul>
           <li>
             <ui5-link
