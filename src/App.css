@@ -51,9 +51,14 @@
   display: block;
 }
 
+.shellBarIconBtn {
+  color: white;
+  background-color: transparent !important;
+}
 .shellBarBtn {
   color: white;
   background-color: transparent !important;
+  align-self: center;
 }
 
 .dialogFooterBtn {
