@@ -1,7 +1,11 @@
 import React, { useReducer } from "react";
 import "./App.css";
 
-import { changeCurrentLocale, currentLocale } from "./i18n/loadText.js";
+import {
+  changeCurrentLocale,
+  currentLocale,
+  getValidLocale
+} from "./i18n/loadText.js";
 
 import TabEligibilityChecker from "./TabEligibilityChecker";
 import TabIndiaInfo from "./TabIndiaInfo";
@@ -44,6 +48,9 @@ function reducer(state, action) {
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const i18n = state.i18n;
+  let aLanguageSwitchBtns = [];
+
+  const aRelevantLanguages = getValidLocale();
   console.log(state);
   return (
     <ThemeProvider>
@@ -147,72 +154,26 @@ function App() {
             }
           >
             <div style={{ width: "200px", height: "250px" }}>
-              <Button
-                design={ButtonDesign.Transparent}
-                onClick={() => {
-                  dispatch({ type: "closeLanguageDialog" });
-                  dispatch({
-                    type: "i18nChange",
-                    payload: changeCurrentLocale("en")
-                  });
-                }}
-              >
-                English
-              </Button>
-              <br />
-              <Button
-                design={ButtonDesign.Transparent}
-                onClick={() => {
-                  dispatch({ type: "closeLanguageDialog" });
-                  dispatch({
-                    type: "i18nChange",
-                    payload: changeCurrentLocale("hi")
-                  });
-                }}
-              >
-                हिंदी
-              </Button>
-              <br />
-              <Button
-                design={ButtonDesign.Transparent}
-                onClick={() => {
-                  dispatch({
-                    type: "i18nChange",
-                    payload: changeCurrentLocale("kn")
-                  });
-                  dispatch({ type: "closeLanguageDialog" });
-                }}
-              >
-                ಕನ್ನಡ
-              </Button>
-              <br />
-              <Button
-                design={ButtonDesign.Transparent}
-                onClick={() => {
-                  dispatch({
-                    type: "i18nChange",
-                    payload: changeCurrentLocale("bn")
-                  });
-                  dispatch({ type: "closeLanguageDialog" });
-                }}
-              >
-                বাংলা
-              </Button>
-              <br />
-              <Button
-                design={ButtonDesign.Transparent}
-                onClick={() => {
-                  dispatch({
-                    type: "i18nChange",
-                    payload: changeCurrentLocale("de")
-                  });
-                  dispatch({ type: "closeLanguageDialog" });
-                }}
-              >
-                German
-              </Button>
-              <br />
-              <br />
+              <ul>
+                {
+                  (aLanguageSwitchBtns = aRelevantLanguages.map(currentVal => {
+                    return (
+                      <Button
+                        design={ButtonDesign.Transparent}
+                        onClick={() => {
+                          dispatch({ type: "closeLanguageDialog" });
+                          dispatch({
+                            type: "i18nChange",
+                            payload: changeCurrentLocale(currentVal.code)
+                          });
+                        }}
+                      >
+                        {currentVal.displayText}
+                      </Button>
+                    );
+                  }))
+                }
+              </ul>
               <br />
               <ui5-link
                 href="
