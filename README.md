@@ -7,7 +7,7 @@ Minimalistic application that allow users to discover important information arou
 
 ## How Can You Help?
 
-- **Help localize** : As next steps, it's important to increase awareness amongst people. One of the ways to do that is have this application in local language. It would be great if you can help translate this app to your native language and share this tool with them.
+- **Help localize** : To make this tool really useful for general Indian audience, it's important to have translations to local languages. The current translations might not be optimum as they have been done using automated APIs. It would be great if you can help translate this app to your native language and share this tool in your community. Relevant language files are maintained under `src/i18n` directory. [Get in touch](https://twitter.com/nitish_mehta) if you need any discussion.
 
 - **Outdated info?** : Please raise an issue or send a Pull Request with the fix. Things have been changing quicker than we expect lately :)
 
@@ -30,4 +30,10 @@ The project directory uses `yarn`. Below are some commonly used scripts:
 
 - Details on COVID-19 by [Indian Council of Medical Research](https://icmr.nic.in/content/covid-19)
 
-- Contact Info : [Twitter](https://twitter.com/nitish_mehta) | [LinkedIn](https://www.linkedin.com/in/nitishmehta08/)
+
+### Contributors 
+
+- Nitish Mehta ([Twitter](https://twitter.com/nitish_mehta) | [LinkedIn](https://www.linkedin.com/in/nitishmehta08/) )
+- [Soumyajit Pathak](http://github.com/drenther)
+- [Suryadeep Pal](https://github.com/techpool)
+
