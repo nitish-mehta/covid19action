@@ -153,36 +153,37 @@ function App() {
               </Button>
             }
           >
-            <div style={{ width: "200px", height: "250px" }}>
-              <ul>
-                {
-                  (aLanguageSwitchBtns = aRelevantLanguages.map(currentVal => {
-                    return (
-                      <Button
-                        design={ButtonDesign.Transparent}
-                        onClick={() => {
-                          dispatch({ type: "closeLanguageDialog" });
-                          dispatch({
-                            type: "i18nChange",
-                            payload: changeCurrentLocale(currentVal.code)
-                          });
-                        }}
-                      >
-                        {currentVal.displayText}
-                      </Button>
-                    );
-                  }))
-                }
-              </ul>
-              <br />
+            <div style={{ width: "250px", height: "300px" }}>
               <ui5-link
                 href="
                   https://github.com/nitish-mehta/covid19action#how-can-you-help"
                 target="_blank"
                 wrap
               >
-                Not here? Help Translate.
+                (Help Improve Translations)
               </ui5-link>{" "}
+              <ul>
+                {
+                  (aLanguageSwitchBtns = aRelevantLanguages.map(currentVal => {
+                    return (
+                      <li>
+                        <Button
+                          design={ButtonDesign.Transparent}
+                          onClick={() => {
+                            dispatch({ type: "closeLanguageDialog" });
+                            dispatch({
+                              type: "i18nChange",
+                              payload: changeCurrentLocale(currentVal.code)
+                            });
+                          }}
+                        >
+                          {currentVal.displayText}
+                        </Button>
+                      </li>
+                    );
+                  }))
+                }
+              </ul>
             </div>
           </Dialog>
         </div>

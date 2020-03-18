@@ -52,35 +52,35 @@ const getValidLocale = () => {
       code: "en"
     },
     {
-      displayText: "हिंदी",
+      displayText: "हिंदी (Hindi)",
       code: "hi"
     },
     {
-      displayText: "ಕನ್ನಡ",
+      displayText: "ಕನ್ನಡ (Kannada)",
       code: "kn"
     },
     {
-      displayText: "বাংলা",
+      displayText: "বাংলা (Bengali)",
       code: "bn"
     },
     {
-      displayText: "Marathi",
+      displayText: "मराठी (Marathi)",
       code: "mr"
     },
     {
-      displayText: "Tamil",
+      displayText: "தமிழ் (Tamil)",
       code: "ta"
     },
     {
-      displayText: "Telegu",
+      displayText: "తెలుగు (Telugu)",
       code: "te"
     },
     {
-      displayText: "Gujarati",
+      displayText: "ગુજરાતી (Gujarati)",
       code: "gu"
     },
     {
-      displayText: "Punjabi",
+      displayText: "પંજાબી (Punjabi)",
       code: "pa"
     },
     {
