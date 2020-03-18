@@ -4,6 +4,7 @@
 import i18n_en from "./i18n_en.json";
 import i18n_bn from "./i18n_bn.json";
 import i18n_hi from "./i18n_hi.json";
+import i18n_kn from "./i18n_kn.json";
 import i18n from "./i18n.json";
 import _ from "lodash";
 
@@ -18,6 +19,8 @@ const changeCurrentLocale = locale => {
       return _.defaults(i18n_bn, i18n);
     case "hi":
       return _.defaults(i18n_hi, i18n);
+    case "kn":
+      return _.defaults(i18n_kn, i18n);
     default:
       currentLocale = "en";
       return i18n;
