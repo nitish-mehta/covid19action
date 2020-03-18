@@ -58,9 +58,7 @@ function App() {
                 icon={"world"}
                 className="shellBarBtn"
                 onClick={() => dispatch({ type: "openLanguageDialog" })}
-              >
-                {i18n.LANGUAGE}
-              </Button>
+              ></Button>
               <Button
                 design={ButtonDesign.Transparent}
                 icon={"sys-help"}
@@ -148,7 +146,7 @@ function App() {
               </Button>
             }
           >
-            <div style={{ width: "200px", height: "200px" }}>
+            <div style={{ width: "200px", height: "250px" }}>
               <Button
                 design={ButtonDesign.Transparent}
                 onClick={() => {
@@ -213,6 +211,17 @@ function App() {
               >
                 German
               </Button>
+              <br />
+              <br />
+              <br />
+              <ui5-link
+                href="
+                  https://github.com/nitish-mehta/covid19action#how-can-you-help"
+                target="_blank"
+                wrap
+              >
+                Not here? Help Translate.
+              </ui5-link>{" "}
             </div>
           </Dialog>
         </div>
