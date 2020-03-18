@@ -110,10 +110,6 @@ const TabEligibilityChecker = ({ i18n }) => {
 
   return (
     <div>
-      <ui5-label wrap>{i18n.ELIGIBILITY_CHECKER_INTRO}</ui5-label>
-      <br />
-      <br />
-
       <div>{i18n.MARK_ALL_SYMPTOMS}</div>
 
       <div className="eligibilityCheckerForm">

@@ -20,6 +20,7 @@ import { Dialog } from "@ui5/webcomponents-react/lib/Dialog";
 
 const initialState = {
   isHelpDialogOpen: false,
+  isLanguageDialogOpen: false,
   i18n: changeCurrentLocale("en")
 };
 
@@ -31,6 +32,10 @@ function reducer(state, action) {
       return { ...state, isHelpDialogOpen: true };
     case "closeDialog":
       return { ...state, isHelpDialogOpen: false };
+    case "openLanguageDialog":
+      return { ...state, isLanguageDialogOpen: true };
+    case "closeLanguageDialog":
+      return { ...state, isLanguageDialogOpen: false };
     default:
       throw new Error();
   }
@@ -50,17 +55,10 @@ function App() {
             <div className="shellBarRight">
               <Button
                 design={ButtonDesign.Transparent}
+                icon={"world"}
                 className="shellBarBtn"
-                onClick={() => {
-                  const sNewLocaleCode = currentLocale === "hi" ? "en" : "hi"; // TODO: Enhance with more languages
-                  dispatch({
-                    type: "i18nChange",
-                    payload: changeCurrentLocale(sNewLocaleCode)
-                  });
-                }}
-              >
-                {i18n.TOGGLE_LANGUAGE}
-              </Button>
+                onClick={() => dispatch({ type: "openLanguageDialog" })}
+              ></Button>
               <Button
                 design={ButtonDesign.Transparent}
                 icon={"sys-help"}
@@ -132,6 +130,98 @@ function App() {
               <br />
               <br />
               <ui5-label wrap>{i18n.WEBSITE_DESCRIPTION_5}</ui5-label>
+            </div>
+          </Dialog>
+
+          <Dialog
+            headerText={"Change Language"}
+            stretch={false}
+            open={state.isLanguageDialogOpen}
+            footer={
+              <Button
+                className="dialogFooterBtn"
+                onClick={() => dispatch({ type: "closeLanguageDialog" })}
+              >
+                {i18n.CLOSE}
+              </Button>
+            }
+          >
+            <div style={{ width: "200px", height: "250px" }}>
+              <Button
+                design={ButtonDesign.Transparent}
+                onClick={() => {
+                  dispatch({ type: "closeLanguageDialog" });
+                  dispatch({
+                    type: "i18nChange",
+                    payload: changeCurrentLocale("en")
+                  });
+                }}
+              >
+                English
+              </Button>
+              <br />
+              <Button
+                design={ButtonDesign.Transparent}
+                onClick={() => {
+                  dispatch({ type: "closeLanguageDialog" });
+                  dispatch({
+                    type: "i18nChange",
+                    payload: changeCurrentLocale("hi")
+                  });
+                }}
+              >
+                हिंदी
+              </Button>
+              <br />
+              <Button
+                design={ButtonDesign.Transparent}
+                onClick={() => {
+                  dispatch({
+                    type: "i18nChange",
+                    payload: changeCurrentLocale("kn")
+                  });
+                  dispatch({ type: "closeLanguageDialog" });
+                }}
+              >
+                ಕನ್ನಡ
+              </Button>
+              <br />
+              <Button
+                design={ButtonDesign.Transparent}
+                onClick={() => {
+                  dispatch({
+                    type: "i18nChange",
+                    payload: changeCurrentLocale("bn")
+                  });
+                  dispatch({ type: "closeLanguageDialog" });
+                }}
+              >
+                বাংলা
+              </Button>
+              <br />
+              <Button
+                design={ButtonDesign.Transparent}
+                onClick={() => {
+                  dispatch({
+                    type: "i18nChange",
+                    payload: changeCurrentLocale("de")
+                  });
+                  dispatch({ type: "closeLanguageDialog" });
+                }}
+              >
+                German
+              </Button>
+              <br />
+              <br />
+              <br />
+              <ui5-link
+                href="
+                  https://github.com/nitish-mehta/covid19action#how-can-you-help"
+                target="_blank"
+                wrap
+              >
+                Not here? Help Translate.
+              </ui5-link>{" "}
             </div>
           </Dialog>
         </div>
