@@ -1,4 +1,16 @@
-const types = ['build', 'ci', 'docs', 'feat', 'fix', 'perf', 'refactor', 'revert', 'style', 'test'];
+const types = [
+  'i18n',
+  'build',
+  'ci',
+  'docs',
+  'feat',
+  'fix',
+  'perf',
+  'refactor',
+  'revert',
+  'style',
+  'test',
+];
 
 module.exports = {
   rules: {
