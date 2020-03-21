@@ -103,15 +103,13 @@ const TabIndiaInfo = ({ i18n }) => {
             </ui5-link>
           </li>
           <li>
-            <Label>ICMR</Label>
-            {' :  '}
-            <ui5-link
-              href="https://icmr.nic.in/sites/default/files/upload_documents/Advisory_COVID19_9Mar2020.pdf"
+            <Link
+              href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"
               target="_blank"
               wrap
             >
-              Testing Strategy (9 March 2020)
-            </ui5-link>
+              WHO: Advice for Public
+            </Link>
           </li>
         </ul>
         <br />
