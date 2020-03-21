@@ -8,12 +8,20 @@ Minimalistic application that allow users to discover important information arou
 - Join in the Slack discussion and collaboration thread in case you would like to make a contribution: 
 https://join.slack.com/t/enterprise-meetup/shared_invite/zt-cy42hgts-7U83p9baEO5Nt7jJqExOvA
 
-- **Help localize** : To make this tool really useful for general Indian audience, it's important to have translations to local languages. The current translations might not be optimum as they have been done using automated APIs. It would be great if you can help translate this app to your native language and share this tool in your community. Relevant language files are maintained under `src/i18n` directory. [Get in touch](https://twitter.com/nitish_mehta) if you need any discussion.
+- **Help localize** : To make this tool really useful for general Indian audience, it's important to have translations to local languages. The current translations might not be optimum as they have been done using automated APIs. It would be great if you can help translate this app to your native language and share this tool in your community. 
+
+**STEPS TO TRANSLATE** : 
+1. Open this [dedicated translation page for myswastha](https://translate.integrtr.com/#/myswastha) . This automatically gets the latest text files from `master` branch.
+2. Update the translations in your own language & download the file
+3. Create a Pull Request with the new file or send it on `myswastha.in@gmail.com`
+
+[Get in touch](https://twitter.com/nitish_mehta) if you need any discussion.
 
 - **Outdated info?** : Please raise an issue or send a Pull Request with the fix. Things have been changing quicker than we expect lately :)
 
 - **Help Offline** : Spread this with people , take adequate precautions and most importantly **practice social distancing**
 
+- **Like to use it for your country** : Please go ahead & fork the repository to add your country specific information. If you would like to use the same domain , please [get in touch](https://twitter.com/nitish_mehta).
 
 ## Reference Screenshots 
 
