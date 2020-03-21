@@ -47,7 +47,7 @@ function reducer(state, action) {
 /**
  * This component renders a labeled switch
  */
-const LabeledSwitch = ({ i18n, label, id, checked, onChange }) => (
+const LabeledSwitch = ({ i18n, label, id, checked, graphical, onChange }) => (
   <div className="formRow">
     <Label className="formLabel" wrap for={id}>
       {label}
@@ -58,7 +58,7 @@ const LabeledSwitch = ({ i18n, label, id, checked, onChange }) => (
       textOn={i18n.YES}
       textOff={i18n.NO}
       className="formSwitch"
-      graphical
+      graphical={graphical}
       id={id}
       onChange={onChange}
     />
@@ -102,6 +102,7 @@ const TabEligibilityChecker = ({ i18n }) => {
             checked={state[symptom.key]}
             i18n={i18n}
             label={symptom.label}
+            graphical
           />
         ))}
         <div>{i18n.ADDITIONAL_INFO}</div>
