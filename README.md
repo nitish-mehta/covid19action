@@ -1,6 +1,8 @@
 Minimalistic application that allow users to discover important information around covid19 (coronavirus) pandemic and their eligibility to get tested.
 
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/41f016bc-ce81-4a3d-a94f-0a7691af1fea/deploy-status)](https://app.netlify.com/sites/myswastha/deploys)
+
 ## How Can You Help?
 
 - Join in the Slack discussion and collaboration thread in case you would like to make a contribution: 
@@ -20,14 +22,11 @@ https://join.slack.com/t/enterprise-meetup/shared_invite/zt-cy42hgts-7U83p9baEO5
 
 ## Getting Started - Development
 
-The project directory uses `yarn`. Below are some commonly used scripts:
+The project directory uses `yarn` as a package manager. Run `yarn` to install add dependencies and `yarn start` to run the app in development mode.
 
-- `yarn start` : Runs the app in the development mode.<br /> Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-- `yarn run test` : Launches the test runner in the interactive watch mode.<br />
-- `yarn run build`: Builds the app for production to the `build` folder.<br />
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and uses [UI5 Webcomponents for React](https://sap.github.io/ui5-webcomponents-react/?path=/story/1-welcome-getting-started--page) as primary component library.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and uses the following libraries primarily:
-- [UI5 Webcomponents for React](https://sap.github.io/ui5-webcomponents-react/?path=/story/1-welcome-getting-started--page)
+You can send in your contributions to this by creating Issues or sending a [Pull Request](https://opensource.guide/how-to-contribute/#opening-a-pull-request). You can also share your points in the slack group.
 
 
 ### Contributors 
