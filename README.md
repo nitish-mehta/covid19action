@@ -6,7 +6,6 @@ Minimalistic application that allow users to discover important information arou
 - Join in the Slack discussion and collaboration thread in case you would like to make a contribution: 
 https://join.slack.com/t/enterprise-meetup/shared_invite/zt-cy42hgts-7U83p9baEO5Nt7jJqExOvA
 
-
 - **Help localize** : To make this tool really useful for general Indian audience, it's important to have translations to local languages. The current translations might not be optimum as they have been done using automated APIs. It would be great if you can help translate this app to your native language and share this tool in your community. Relevant language files are maintained under `src/i18n` directory. [Get in touch](https://twitter.com/nitish_mehta) if you need any discussion.
 
 - **Outdated info?** : Please raise an issue or send a Pull Request with the fix. Things have been changing quicker than we expect lately :)
@@ -33,15 +32,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Contributors 
 
-- Nitish Mehta ([Twitter](https://twitter.com/nitish_mehta) | [LinkedIn](https://www.linkedin.com/in/nitishmehta08/) )
-- [Soumyajit Pathak](http://github.com/drenther)
-- [Suryadeep Pal](https://github.com/techpool)
-- [Vivek Gowda](https://github.com/theVivekGowda)
+- Nitish ([Twitter](https://twitter.com/nitish_mehta) | [LinkedIn](https://www.linkedin.com/in/nitishmehta08/) )
+- [Soumyajit](http://github.com/drenther)
+- [Suryadeep](https://github.com/techpool)
+- [Vivek](https://github.com/theVivekGowda)
 
-Translations and Content improvements:
+_Translations and Content improvements by:_
 - [Rubina](https://twitter.com/Rubina_BigB_EF)
 - [Vijeth](https://github.com/VijethKC) - Kannada
 
 ### Sponsors
 Made possible with support from 
+
+
 ![image](https://user-images.githubusercontent.com/15953522/77223096-86836c80-6b7f-11ea-9009-529accd8a34a.png)
