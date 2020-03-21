@@ -69,3 +69,16 @@
   display: flex;
   align-self: center;
 }
+
+.newLineWrap {
+  white-space: pre-wrap;
+}
+
+.carouselText {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  font-weight: 800;
+}

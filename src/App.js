@@ -1,44 +1,40 @@
-import React, { useReducer } from "react";
-import "./App.css";
+import React, { useReducer } from 'react';
+import './App.css';
 
-import {
-  changeCurrentLocale,
-  currentLocale,
-  getValidLocale
-} from "./i18n/loadText.js";
+import { changeCurrentLocale, currentLocale, getValidLocale } from './i18n/loadText.js';
 
-import TabEligibilityChecker from "./TabEligibilityChecker";
-import TabIndiaInfo from "./TabIndiaInfo";
-import TabMoreInfo from "./TabMoreInfo";
+import TabEligibilityChecker from './TabEligibilityChecker';
+import TabIndiaInfo from './TabIndiaInfo';
+import TabMoreInfo from './TabMoreInfo';
 
-import { Button } from "@ui5/webcomponents-react/lib/Button";
-import { ThemeProvider } from "@ui5/webcomponents-react/lib/ThemeProvider";
+import { Button } from '@ui5/webcomponents-react/lib/Button';
+import { ThemeProvider } from '@ui5/webcomponents-react/lib/ThemeProvider';
 
-import "@ui5/webcomponents/dist/TabContainer";
-import "@ui5/webcomponents/dist/Tab";
-import "@ui5/webcomponents/dist/Label";
+import '@ui5/webcomponents/dist/TabContainer';
+import '@ui5/webcomponents/dist/Tab';
+import '@ui5/webcomponents/dist/Label';
 
-import "@ui5/webcomponents-icons/dist/json-imports/Icons.js";
-import { ButtonDesign } from "@ui5/webcomponents-react/lib/ButtonDesign";
-import { Dialog } from "@ui5/webcomponents-react/lib/Dialog";
+import '@ui5/webcomponents-icons/dist/json-imports/Icons.js';
+import { ButtonDesign } from '@ui5/webcomponents-react/lib/ButtonDesign';
+import { Dialog } from '@ui5/webcomponents-react/lib/Dialog';
 
 const initialState = {
   isHelpDialogOpen: false,
   isLanguageDialogOpen: false,
-  i18n: changeCurrentLocale("en")
+  i18n: changeCurrentLocale('en'),
 };
 
 function reducer(state, action) {
   switch (action.type) {
-    case "i18nChange":
+    case 'i18nChange':
       return { ...state, i18n: action.payload };
-    case "openDialog":
+    case 'openDialog':
       return { ...state, isHelpDialogOpen: true };
-    case "closeDialog":
+    case 'closeDialog':
       return { ...state, isHelpDialogOpen: false };
-    case "openLanguageDialog":
+    case 'openLanguageDialog':
       return { ...state, isLanguageDialogOpen: true };
-    case "closeLanguageDialog":
+    case 'closeLanguageDialog':
       return { ...state, isLanguageDialogOpen: false };
     default:
       throw new Error();
@@ -48,7 +44,6 @@ function reducer(state, action) {
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const i18n = state.i18n;
-  let aLanguageSwitchBtns = [];
 
   const aRelevantLanguages = getValidLocale();
   console.log(state);
@@ -62,15 +57,15 @@ function App() {
             <div className="shellBarRight">
               <Button
                 design={ButtonDesign.Transparent}
-                icon={"world"}
+                icon={'world'}
                 className="shellBarBtn"
-                onClick={() => dispatch({ type: "openLanguageDialog" })}
+                onClick={() => dispatch({ type: 'openLanguageDialog' })}
               ></Button>
               <Button
                 design={ButtonDesign.Transparent}
-                icon={"sys-help"}
+                icon={'sys-help'}
                 className="shellBarIconBtn"
-                onClick={() => dispatch({ type: "openDialog" })}
+                onClick={() => dispatch({ type: 'openDialog' })}
               ></Button>
             </div>
           </div>
@@ -92,47 +87,32 @@ function App() {
             stretch={false}
             open={state.isHelpDialogOpen}
             footer={
-              <Button
-                className="dialogFooterBtn"
-                onClick={() => dispatch({ type: "closeDialog" })}
-              >
+              <Button className="dialogFooterBtn" onClick={() => dispatch({ type: 'closeDialog' })}>
                 {i18n.CLOSE}
               </Button>
             }
           >
-            <div style={{ width: "300px", height: "300px" }}>
+            <div style={{ width: '300px', height: '300px' }}>
               <ui5-label wrap>{i18n.WEBSITE_DESCRIPTION_1}</ui5-label>
               <br />
               <br />
               <ui5-label wrap>
-                {i18n.WEBSITE_DESCRIPTION_2}{" "}
-                <ui5-link
-                  href="https://github.com/nitish-mehta/covid19action"
-                  target="_blank"
-                  wrap
-                >
-                  GitHub{" "}
+                {i18n.WEBSITE_DESCRIPTION_2}{' '}
+                <ui5-link href="https://github.com/nitish-mehta/covid19action" target="_blank" wrap>
+                  GitHub{' '}
                 </ui5-link>
                 {i18n.WEBSITE_DESCRIPTION_3}
               </ui5-label>
               <br />
               <ui5-label wrap>
-                {i18n.WEBSITE_DESCRIPTION_4}{" "}
-                <ui5-link
-                  href="https://twitter.com/nitish_mehta"
-                  target="_blank"
-                  wrap
-                >
+                {i18n.WEBSITE_DESCRIPTION_4}{' '}
+                <ui5-link href="https://twitter.com/nitish_mehta" target="_blank" wrap>
                   Twitter
-                </ui5-link>{" "}
-                {i18n.AND}{" "}
-                <ui5-link
-                  href="https://www.linkedin.com/in/nitishmehta08/"
-                  target="_blank"
-                  wrap
-                >
+                </ui5-link>{' '}
+                {i18n.AND}{' '}
+                <ui5-link href="https://www.linkedin.com/in/nitishmehta08/" target="_blank" wrap>
                   LinkedIn.
-                </ui5-link>{" "}
+                </ui5-link>{' '}
               </ui5-label>
               <br />
               <br />
@@ -141,19 +121,19 @@ function App() {
           </Dialog>
 
           <Dialog
-            headerText={"Change Language"}
+            headerText={'Change Language'}
             stretch={false}
             open={state.isLanguageDialogOpen}
             footer={
               <Button
                 className="dialogFooterBtn"
-                onClick={() => dispatch({ type: "closeLanguageDialog" })}
+                onClick={() => dispatch({ type: 'closeLanguageDialog' })}
               >
                 {i18n.CLOSE}
               </Button>
             }
           >
-            <div style={{ width: "250px", height: "300px" }}>
+            <div style={{ width: '250px', height: '300px' }}>
               <ui5-link
                 href="
                   https://github.com/nitish-mehta/covid19action#how-can-you-help"
@@ -161,28 +141,26 @@ function App() {
                 wrap
               >
                 (Help Improve Translations)
-              </ui5-link>{" "}
+              </ui5-link>{' '}
               <ul>
-                {
-                  (aLanguageSwitchBtns = aRelevantLanguages.map(currentVal => {
-                    return (
-                      <li>
-                        <Button
-                          design={ButtonDesign.Transparent}
-                          onClick={() => {
-                            dispatch({ type: "closeLanguageDialog" });
-                            dispatch({
-                              type: "i18nChange",
-                              payload: changeCurrentLocale(currentVal.code)
-                            });
-                          }}
-                        >
-                          {currentVal.displayText}
-                        </Button>
-                      </li>
-                    );
-                  }))
-                }
+                {aRelevantLanguages.map(currentVal => {
+                  return (
+                    <li>
+                      <Button
+                        design={ButtonDesign.Transparent}
+                        onClick={() => {
+                          dispatch({ type: 'closeLanguageDialog' });
+                          dispatch({
+                            type: 'i18nChange',
+                            payload: changeCurrentLocale(currentVal.code),
+                          });
+                        }}
+                      >
+                        {currentVal.displayText}
+                      </Button>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </Dialog>
