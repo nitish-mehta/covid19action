@@ -72,3 +72,31 @@
 .boldText{
   font-weight: 800;
 }
+
+@media only screen and (min-width: 600px) {
+  .socialDistanceCarousel {
+    max-width: 400px !important;
+  }
+  .carouselIntroText{
+    max-width: 400px !important;
+  }
+}
+.socialDistanceCarousel{
+  margin-top: 3px;
+}
+
+.carouselIntroText{
+  width: 90%;
+}
+
+.carouselText {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  font-weight: 800;
+}
+.newLineWrap {
+  white-space: pre-wrap;
+}
