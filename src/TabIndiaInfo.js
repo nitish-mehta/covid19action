@@ -1,115 +1,99 @@
-import React from "react";
+import React from 'react';
 
-import "@ui5/webcomponents/dist/Label";
-import "@ui5/webcomponents/dist/Link";
+import { Title } from '@ui5/webcomponents-react/lib/Title';
+import { Label } from '@ui5/webcomponents-react/lib/Label';
+import { Link } from '@ui5/webcomponents-react/lib/Link';
 
 const TabIndiaInfo = ({ i18n }) => {
   return (
     <div>
       <div>
-        <ui5-title level="H3">{i18n.IMPORTANT_WEBSITES} </ui5-title>
+        <Title level="H3">{i18n.IMPORTANT_WEBSITES}</Title>
         <ul>
           <li>
-            <ui5-label>{i18n.T_INDIA_WEBSITE}</ui5-label>
-            {"  "}
-            <ui5-link href="https://www.mohfw.gov.in/" target="_blank" wrap>
+            <Label>{i18n.T_INDIA_WEBSITE}</Label>
+            {'  '}
+            <Link href="https://www.mohfw.gov.in/" target="_blank" wrap>
               {i18n.MINISTRY_OF_HEALTH}
-            </ui5-link>
+            </Link>
           </li>
           <li>
-            <ui5-label>{i18n.T_INDIA_WEBSITE} </ui5-label>
-            {"  "}
-            <ui5-link
-              href="https://icmr.nic.in/content/covid-19"
-              target="_blank"
-              wrap
-            >
+            <Label>{i18n.T_INDIA_WEBSITE} </Label>
+            {'  '}
+            <Link href="https://icmr.nic.in/content/covid-19" target="_blank" wrap>
               {i18n.ICMR_FULL}
-            </ui5-link>
+            </Link>
           </li>
         </ul>
-        <ui5-title level="H3">{i18n.T_TEST_CENTER_HELPLINE}</ui5-title>
-        <ui5-label wrap>(Last Updated : 17 March 2020)</ui5-label>
+        <Title level="H3">{i18n.T_TEST_CENTER_HELPLINE}</Title>
+        <Label wrap>(Last Updated : 17 March 2020)</Label>
 
         <ul>
           <li>
-            <ui5-label>{i18n.CENTRAL_HELPLINE}</ui5-label>
-            {" :  "}
-            <ui5-link href="tel:+91-11-23978046">+91-11-23978046</ui5-link>
+            <Label>{i18n.CENTRAL_HELPLINE}</Label>
+            {' :  '}
+            <Link href="tel:+91-11-23978046">+91-11-23978046</Link>
           </li>
           <li>
-            <ui5-label>{i18n.ALL_HELPLINE_NUMBERS}</ui5-label>
-            {" :  "}
-            <ui5-link
-              href="https://www.mohfw.gov.in/coronvavirushelplinenumber.pdf"
-              target="_blank"
-            >
+            <Label>{i18n.ALL_HELPLINE_NUMBERS}</Label>
+            {' :  '}
+            <Link href="https://www.mohfw.gov.in/coronvavirushelplinenumber.pdf" target="_blank">
               {i18n.ALL_STATE_UT}
-            </ui5-link>
+            </Link>
           </li>
           <li>
-            <ui5-label>Email</ui5-label>
-            {" :  "}
-            <ui5-link href="mailto:ncov2019@gmail.com " target="_blank">
+            <Label>Email</Label>
+            {' :  '}
+            <Link href="mailto:ncov2019@gmail.com " target="_blank">
               ncov2019@gmail.com
-            </ui5-link>
+            </Link>
           </li>
           <br />
           <li>
-            <ui5-link
+            <Link
               href="https://icmr.nic.in/sites/default/files/upload_documents/COVID_19_Testing_Laboratories.pdf"
               target="_blank"
             >
               {i18n.LIST_TESTING_SITE}
-            </ui5-link>
+            </Link>
           </li>
           <li>
-            <ui5-link
+            <Link
               href="https://icmr.nic.in/sites/default/files/upload_documents/COVID_19_Testing_Sites.pdf"
               target="_blank"
             >
               {i18n.MAP_TESTING_SITES}
-            </ui5-link>
+            </Link>
           </li>
           <li>
-            <ui5-link
+            <Link
               href="http://icmr.nic.in/sites/default/files/upload_documents/List_of_VRDL_V2.pdf"
               target="_blank"
             >
               {i18n.LAB_ACROSS_INDIA}
-            </ui5-link>
+            </Link>
           </li>
         </ul>
-        {/* {-----------------------------------------------------------------------------------------------------------} */}
-        {/* {-----------------------------------------------------------------------------------------------------------} */}
-        <ui5-title level="H3"> {i18n.ADDITIONAL_INFO} </ui5-title>
+        <Title level="H3"> {i18n.ADDITIONAL_INFO} </Title>
         <ul>
           <li>
-            <ui5-label>Youtube (Ministry of Health) </ui5-label>
-            {" :  "}
-            <ui5-link
-              href="https://www.mohfw.gov.in/FINAL_14_03_2020_Hindi.pdf"
-              target="_blank"
-              wrap
-            >
+            <Label>Youtube (Ministry of Health) </Label>
+            {' :  '}
+            <Link href="https://www.mohfw.gov.in/FINAL_14_03_2020_Hindi.pdf" target="_blank" wrap>
               COVID-19 Management Videos
-            </ui5-link>
+            </Link>
           </li>
           <li>
-            <ui5-label>Ministry of Health (14 March 2020) </ui5-label>
-            {" :  "}
-            <ui5-link
-              href="https://www.mohfw.gov.in/FINAL_14_03_2020_ENg.pdf"
-              target="_blank"
-              wrap
-            >
+            <Label>Ministry of Health (14 March 2020) </Label>
+            {' :  '}
+            <Link href="https://www.mohfw.gov.in/FINAL_14_03_2020_ENg.pdf" target="_blank" wrap>
               When to get tested?
-            </ui5-link>
+            </Link>
           </li>
 
           <li>
-            <ui5-label>Ministry of Health (14 March 2020) </ui5-label>
-            {" :  "}
+            <Label>Ministry of Health (14 March 2020) </Label>
+            {' :  '}
             <ui5-link
               href="https://www.mohfw.gov.in/FINAL_14_03_2020_Hindi.pdf"
               target="_blank"
@@ -119,8 +103,8 @@ const TabIndiaInfo = ({ i18n }) => {
             </ui5-link>
           </li>
           <li>
-            <ui5-label>ICMR</ui5-label>
-            {" :  "}
+            <Label>ICMR</Label>
+            {' :  '}
             <ui5-link
               href="https://icmr.nic.in/sites/default/files/upload_documents/Advisory_COVID19_9Mar2020.pdf"
               target="_blank"
