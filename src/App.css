@@ -69,3 +69,6 @@
   display: flex;
   align-self: center;
 }
+.boldText{
+  font-weight: 800;
+}
