@@ -18,8 +18,9 @@ const initialState = {
   relevantContact: false,
   isResultDialogOpen: false,
   resultText: '',
-  resultTextDescription: '',
-  resultTextDescription2: '',
+  resultGovtAdvisoryText: '',
+  resultGeneralGuidanceText: '',
+  resultClosingNote: '',
   resultCloseBtnText: 'Close',
 };
 
@@ -35,8 +36,11 @@ function reducer(state, action) {
       return {
         ...state,
         resultText: action.payload.text,
-        resultTextDescription: action.payload.description,
-        resultTextDescription2: action.payload.description2 ? action.payload.description2 : '',
+        resultGovtAdvisoryText: action.payload.govtAdvisoryText,
+        resultGeneralGuidanceText: action.payload.generalGuidanceText
+          ? action.payload.generalGuidanceText
+          : '',
+        resultClosingNote: action.payload.closingNote ? action.payload.closingNote : '',
         resultCloseBtnText: action.payload.closeBtnText ? action.payload.closeBtnText : 'X',
       };
     default:
@@ -131,8 +135,9 @@ const TabEligibilityChecker = ({ i18n }) => {
                 type: 'updateResult',
                 payload: {
                   text: i18n.R_GET_TESTED_TITLE,
-                  description: i18n.R_GET_TESTED_DESCR1,
-                  description2: i18n.R_GET_TESTED_DESCR2,
+                  govtAdvisoryText: i18n.R_GET_TESTED_GOVT_ADVISORY,
+                  generalGuidanceText: i18n.R_GET_TESTED_GENERAL_GUIDANCE,
+                  closingNote: i18n.R_GET_TESTED_CLOSING_NOTE,
                   closeBtnText: i18n.R_GET_TESTED_CLOSEBTN,
                 },
               });
@@ -143,8 +148,9 @@ const TabEligibilityChecker = ({ i18n }) => {
                 type: 'updateResult',
                 payload: {
                   text: i18n.R_QUARANTINE_HIGH_TITLE,
-                  description: i18n.R_QUARANTINE_HIGH_DESCR1,
-                  description2: i18n.R_QUARANTINE_HIGH_DESCR2,
+                  govtAdvisoryText: i18n.R_QUARANTINE_HIGH_GOVT_ADVISORY,
+                  generalGuidanceText: i18n.R_QUARANTINE_HIGH_GENERAL_GUIDANCE,
+                  closingNote: i18n.R_QUARANTINE_HIGH_CLOSING_NOTE,
                   closeBtnText: i18n.R_QUARANTINE_HIGH_CLOSEBTN,
                 },
               });
@@ -153,23 +159,38 @@ const TabEligibilityChecker = ({ i18n }) => {
               dispatch({
                 type: 'updateResult',
                 payload: {
-                  text: i18n.R_SOCIAL_DISTANCE_HIGH_TITLE,
-                  description: i18n.R_SOCIAL_DISTANCE_HIGH_DESCR1,
-                  description2: i18n.R_SOCIAL_DISTANCE_HIGH_DESCR2,
-                  closeBtnText: i18n.R_SOCIAL_DISTANCE_HIGH_CLOSEBTN,
+                  text: i18n.R_QUARANTINE_LOW_TITLE,
+                  govtAdvisoryText: i18n.R_QUARANTINE_LOW_GOVT_ADVISORY,
+                  generalGuidanceText: i18n.R_QUARANTINE_LOW_GENERAL_GUIDANCE,
+                  closingNote: i18n.R_QUARANTINE_LOW_CLOSING_NOTE,
+                  closeBtnText: i18n.R_QUARANTINE_LOW_CLOSEBTN,
                 },
               });
             }
-          } else if (state.fever || state.runnyNose || state.difficultyBreathing || state.cough) {
+          } else if (state.fever && (state.runnyNose || state.difficultyBreathing || state.cough)) {
             // it's probably nothing - but better take precautions
             // as per current advisory, testing only happening for people who have travel history
             dispatch({
               type: 'updateResult',
               payload: {
-                text: i18n.R_QUARANTINE_TITLE,
-                description: i18n.R_QUARANTINE_DESCR1,
-                description2: i18n.R_QUARANTINE_DESCR2,
-                closeBtnText: i18n.R_QUARANTINE_CLOSEBTN,
+                text: i18n.R_QUARANTINE_MEDIUM_TITLE,
+                govtAdvisoryText: i18n.R_QUARANTINE_MEDIUM_GOVT_ADVISORY,
+                generalGuidanceText: i18n.R_QUARANTINE_MEDIUM_GENERAL_GUIDANCE,
+                closingNote: i18n.R_QUARANTINE_MEDIUM_CLOSING_NOTE,
+                closeBtnText: i18n.R_QUARANTINE_MEDIUM_CLOSEBTN,
+              },
+            });
+          } else if (state.fever || state.runnyNose || state.difficultyBreathing || state.cough) {
+            // it's probably nothing - but better take precautions
+            // non-fever symptoms
+            dispatch({
+              type: 'updateResult',
+              payload: {
+                text: i18n.R_QUARANTINE_MEDIUM_ONLYONE_TITLE,
+                govtAdvisoryText: i18n.R_QUARANTINE_MEDIUM_ONLYONE_GOVT_ADVISORY,
+                generalGuidanceText: i18n.R_QUARANTINE_MEDIUM_ONLYONE_GENERAL_GUIDANCE,
+                closingNote: i18n.R_QUARANTINE_MEDIUM_CLOSING_NOTE,
+                closeBtnText: i18n.R_QUARANTINE_MEDIUM_CLOSEBTN,
               },
             });
           } else {
@@ -178,10 +199,11 @@ const TabEligibilityChecker = ({ i18n }) => {
             dispatch({
               type: 'updateResult',
               payload: {
-                text: i18n.R_SOCIAL_DISTANCE_TITLE,
-                description: i18n.R_SOCIAL_DISTANCE_DESCR1,
-                description2: i18n.R_SOCIAL_DISTANCE_DESCR2,
-                closeBtnText: i18n.R_SOCIAL_DISTANCE_CLOSEBTN,
+                text: i18n.R_SOCIAL_DISTANCING_TITLE,
+                govtAdvisoryText: i18n.R_SOCIAL_DISTANCING_GOVT_ADVISORY,
+                generalGuidanceText: i18n.R_SOCIAL_DISTANCING_GENERAL_GUIDANCE,
+                closingNote: i18n.R_SOCIAL_DISTANCING_CLOSING_NOTE,
+                closeBtnText: i18n.R_SOCIAL_DISTANCING_CLOSEBTN,
               },
             });
           }
@@ -203,15 +225,23 @@ const TabEligibilityChecker = ({ i18n }) => {
           </Button>
         }
       >
-        <div style={{ width: '300px', height: '300px' }}>
+        <div style={{ width: '300px', height: '400px' }}>
           <Label wrap>{state.resultText}</Label>
           <br />
           <br />
+          <Label wrap className="boldText">
+            {i18n.GOVT_ADVISORY}
+          </Label>
+          <Label wrap>{state.resultGovtAdvisoryText}</Label>
           <br />
-          <Label wrap>{state.resultTextDescription}</Label>
+          <br />
+          <Label wrap className="boldText">
+            {i18n.GENERAL_GUIDANCE}
+          </Label>
+          <Label wrap>{state.resultGeneralGuidanceText}</Label>
           <br />
           <br />
-          <Label wrap>{state.resultTextDescription2}</Label>
+          <Label wrap>{state.resultClosingNote}</Label>
         </div>
       </Dialog>
     </div>

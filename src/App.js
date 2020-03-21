@@ -75,10 +75,10 @@ function App() {
             <Tab text={i18n.UNWELL} icon="stethoscope" selected>
               <TabEligibilityChecker i18n={i18n} />
             </Tab>
-            <Tab text={i18n.INDIA} icon="hint">
+            <Tab text={i18n.INDIA} icon="notes">
               <TabIndiaInfo i18n={i18n} />
             </Tab>
-            <Tab text="" icon="globe">
+            <Tab text={''} icon="business-objects-experience">
               <TabMoreInfo i18n={i18n} />
             </Tab>
           </TabContainer>
