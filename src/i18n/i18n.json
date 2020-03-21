@@ -1,5 +1,5 @@
 {
-  "HOME_TITLE": "Covid-19 India",
+  "HOME_TITLE": "Covid-19",
   "LANGUAGE": "Language",
   "INDIA": "India",
   "GLOBAL": "Global",
@@ -23,7 +23,7 @@
   "YES": "Yes",
   "NO": "No",
   "FEVER": "Fever :",
-  "RUNNY_NOSE": "Runny Nose :",
+  "BODYACHE": "Headache / Body aches :",
   "COUGH": "Cough :",
   "DIFFICULTY_BREATHING": "Difficulty in breathing :",
   "ADDITIONAL_INFO": "Additional Information :",
@@ -31,6 +31,7 @@
   "GENERAL_GUIDANCE": "General Guidance",
   "Q_HIGH_RISK_COUNTRIES": "Have you visited any COVID-19 affected countries in last 14 days?",
   "Q_CONFIRMED_CASE_CONTACT": "Have you been in contact with any confirmed positive case?",
+  "Q_PNEUMONIA": "Are you suffering from pneumonia?",
 
   "R_GET_TESTED_TITLE": "Get yourself tested.",
   "R_GET_TESTED_GOVT_ADVISORY": "As per the health ministry advisory, you should get yourself tested at the nearest CoronaVirus testing center. Kindly call the central/local helpline number to share your details and understand testing protocols. Check next tab to find the nearest testing center and helpling number.",
@@ -82,5 +83,7 @@
   "MAP_TESTING_SITES": "COVID-19 Testing Sites (Map)",
   "LAB_ACROSS_INDIA": "Laboratories across India & Contact Info",
   "LEARN_AND_SHARE": "Learn more & share",
-  "USEFUL_TRACKING_WEBSITES": "Useful tracking websites"
+  "USEFUL_TRACKING_WEBSITES": "Useful tracking websites",
+  "WHATSAPP_HELPLINE": "WhatsApp",
+  "PHONE": "Phone"
 }
