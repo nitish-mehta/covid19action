@@ -11,12 +11,13 @@ import { Label } from '@ui5/webcomponents-react/lib/Label';
 
 const initialState = {
   fever: false,
-  runnyNose: false,
+  ache: false,
   cough: false,
   difficultyBreathing: false,
   relevantTravelHistory: false,
   relevantContact: false,
   isResultDialogOpen: false,
+  haspneumonia: false,
   resultText: '',
   resultGovtAdvisoryText: '',
   resultGeneralGuidanceText: '',
@@ -72,7 +73,7 @@ const LabeledSwitch = ({ i18n, label, id, checked, graphical, onChange }) => (
 // labels and action payload keys for symtoms toggles
 const getSymptoms = i18n => [
   { key: 'fever', label: i18n.FEVER },
-  { key: 'runnyNose', label: i18n.RUNNY_NOSE },
+  { key: 'ache', label: i18n.BODYACHE },
   { key: 'cough', label: i18n.COUGH },
   { key: 'difficultyBreathing', label: i18n.DIFFICULTY_BREATHING },
 ];
@@ -81,6 +82,7 @@ const getSymptoms = i18n => [
 const getAdditionalInfo = i18n => [
   { key: 'relevantTravelHistory', label: i18n.Q_HIGH_RISK_COUNTRIES },
   { key: 'relevantContact', label: i18n.Q_CONFIRMED_CASE_CONTACT },
+  { key: 'haspneumonia', label: i18n.Q_PNEUMONIA },
 ];
 
 const TabEligibilityChecker = ({ i18n }) => {
@@ -126,7 +128,7 @@ const TabEligibilityChecker = ({ i18n }) => {
         design={ButtonDesign.Emphasized}
         // icon={"add"}
         onClick={() => {
-          if (state.relevantContact || state.relevantTravelHistory) {
+          if (state.relevantContact || state.relevantTravelHistory || state.haspneumonia) {
             // passes first filter criteria
 
             if (state.fever) {
@@ -141,7 +143,7 @@ const TabEligibilityChecker = ({ i18n }) => {
                   closeBtnText: i18n.R_GET_TESTED_CLOSEBTN,
                 },
               });
-            } else if (state.runnyNose || state.difficultyBreathing || state.cough) {
+            } else if (state.ache || state.difficultyBreathing || state.cough) {
               // fever is important criteria as a symptom for testing
               // self quarantine for 14 days. Immediately get yourself checked if fever develops
               dispatch({
@@ -167,7 +169,7 @@ const TabEligibilityChecker = ({ i18n }) => {
                 },
               });
             }
-          } else if (state.fever && (state.runnyNose || state.difficultyBreathing || state.cough)) {
+          } else if (state.fever && (state.ache || state.difficultyBreathing || state.cough)) {
             // it's probably nothing - but better take precautions
             // as per current advisory, testing only happening for people who have travel history
             dispatch({
@@ -180,7 +182,7 @@ const TabEligibilityChecker = ({ i18n }) => {
                 closeBtnText: i18n.R_QUARANTINE_MEDIUM_CLOSEBTN,
               },
             });
-          } else if (state.fever || state.runnyNose || state.difficultyBreathing || state.cough) {
+          } else if (state.fever || state.ache || state.difficultyBreathing || state.cough) {
             // it's probably nothing - but better take precautions
             // non-fever symptoms
             dispatch({

@@ -8,6 +8,33 @@ const TabIndiaInfo = ({ i18n }) => {
   return (
     <div>
       <div>
+        <Title level="H3">{i18n.T_TEST_CENTER_HELPLINE}</Title>
+        <Label wrap className="subHeaderText">
+          (Last Updated : 20 March 2020)
+        </Label>
+        <ul>
+          <li>
+            <Label>{i18n.WHATSAPP_HELPLINE}</Label>
+            {' :  '}
+            <Link href="https://api.whatsapp.com/send?phone=919013151515&text=Hi&source=&data=">
+              {'India Helpline'}
+            </Link>
+          </li>
+          <li>
+            <Label>{i18n.PHONE}</Label>
+            {' :  '}
+            <Link href="tel:+91-11-23978046">+91-11-23978046</Link>
+            {' &  '}
+            <Link href="tel:1075">1075</Link>
+          </li>
+          <li>
+            <Label>Email</Label>
+            {' :  '}
+            <Link href="mailto:ncov2019@gmail.com " target="_blank">
+              ncov2019@gmail.com
+            </Link>
+          </li>
+        </ul>
         <Title level="H3">{i18n.IMPORTANT_WEBSITES}</Title>
         <ul>
           <li>
@@ -24,15 +51,17 @@ const TabIndiaInfo = ({ i18n }) => {
               {i18n.ICMR_FULL}
             </Link>
           </li>
-        </ul>
-        <Title level="H3">{i18n.T_TEST_CENTER_HELPLINE}</Title>
-        <Label wrap>(Last Updated : 17 March 2020)</Label>
-
-        <ul>
+          <br />
           <li>
-            <Label>{i18n.CENTRAL_HELPLINE}</Label>
+            <Label>{i18n.MINISTRY_OF_HEALTH}</Label>
             {' :  '}
-            <Link href="tel:+91-11-23978046">+91-11-23978046</Link>
+            <Link
+              href="https://icmr.nic.in/sites/default/files/upload_documents/2020-03-20_covid19_test_v3.pdf"
+              target="_blank"
+              wrap
+            >
+              Testing Strategy - Version 3
+            </Link>
           </li>
           <li>
             <Label>{i18n.ALL_HELPLINE_NUMBERS}</Label>
@@ -42,32 +71,8 @@ const TabIndiaInfo = ({ i18n }) => {
             </Link>
           </li>
           <li>
-            <Label>Email</Label>
-            {' :  '}
-            <Link href="mailto:ncov2019@gmail.com " target="_blank">
-              ncov2019@gmail.com
-            </Link>
-          </li>
-          <br />
-          <li>
             <Link
-              href="https://icmr.nic.in/sites/default/files/upload_documents/COVID_19_Testing_Laboratories.pdf"
-              target="_blank"
-            >
-              {i18n.LIST_TESTING_SITE}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="https://icmr.nic.in/sites/default/files/upload_documents/COVID_19_Testing_Sites.pdf"
-              target="_blank"
-            >
-              {i18n.MAP_TESTING_SITES}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="http://icmr.nic.in/sites/default/files/upload_documents/List_of_VRDL_V2.pdf"
+              href="https://icmr.nic.in/sites/default/files/upload_documents/List_of_VRDL_V2.pdf"
               target="_blank"
             >
               {i18n.LAB_ACROSS_INDIA}
@@ -84,31 +89,21 @@ const TabIndiaInfo = ({ i18n }) => {
             </Link>
           </li>
           <li>
-            <Label>Ministry of Health (14 March 2020) </Label>
+            <Label>WHO</Label>
             {' :  '}
-            <Link href="https://www.mohfw.gov.in/FINAL_14_03_2020_ENg.pdf" target="_blank" wrap>
-              When to get tested?
-            </Link>
-          </li>
-
-          <li>
-            <Label>Ministry of Health (14 March 2020) </Label>
-            {' :  '}
-            <ui5-link
-              href="https://www.mohfw.gov.in/FINAL_14_03_2020_Hindi.pdf"
-              target="_blank"
-              wrap
-            >
-              परीक्षण कब करवाना है?
-            </ui5-link>
-          </li>
-          <li>
             <Link
               href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"
               target="_blank"
               wrap
             >
-              WHO: Advice for Public
+              Advice for Public
+            </Link>
+          </li>
+          <li>
+            <Label>WHO</Label>
+            {' :  '}
+            <Link href="https://api.whatsapp.com/send?phone=41798931892&text=hi&source=&data=">
+              {i18n.WHATSAPP_HELPLINE}
             </Link>
           </li>
         </ul>
