@@ -1,65 +1,58 @@
-import React from "react";
+import React from 'react';
 
-import "@ui5/webcomponents/dist/Label";
-import "@ui5/webcomponents/dist/Link";
+import { Title } from '@ui5/webcomponents-react/lib/Title';
+import { Label } from '@ui5/webcomponents-react/lib/Label';
+import { Link } from '@ui5/webcomponents-react/lib/Link';
 
 const TabMoreInfo = ({ i18n }) => {
   return (
     <div>
       <div>
-        <ui5-title level="H3">{i18n.USEFUL_TRACKING_WEBSITES}</ui5-title>
+        <Title level="H3">{i18n.USEFUL_TRACKING_WEBSITES}</Title>
         <ul>
           <li>
-            <ui5-label>[India]</ui5-label>{" "}
-            <ui5-link href="https://covidout.in/" target="_blank" wrap>
+            <Label>[India]</Label>{' '}
+            <Link href="https://covidout.in/" target="_blank" wrap>
               https://covidout.in/
-            </ui5-link>
+            </Link>
           </li>
           <li>
-            <ui5-label>[Global]</ui5-label>{" "}
-            <ui5-link
-              href="https://www.worldometers.info/coronavirus/"
-              target="_blank"
-              wrap
-            >
+            <Label>[Global]</Label>{' '}
+            <Link href="https://www.worldometers.info/coronavirus/" target="_blank" wrap>
               https://ncov2019.live/
-            </ui5-link>
+            </Link>
           </li>
           <li>
-            <ui5-link
-              href="https://www.worldometers.info/coronavirus/"
-              target="_blank"
-              wrap
-            >
+            <Link href="https://www.worldometers.info/coronavirus/" target="_blank" wrap>
               https://www.worldometers.info/coronavirus/
-            </ui5-link>
+            </Link>
           </li>
         </ul>
-        <ui5-title level="H3">{i18n.LEARN_AND_SHARE}</ui5-title>
+        <Title level="H3">{i18n.LEARN_AND_SHARE}</Title>
         <ul>
           <li>
-            <ui5-link
+            <Link
               href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"
               target="_blank"
               wrap
             >
               WHO: Advice for Public
-            </ui5-link>
+            </Link>
           </li>
           <br />
           <li>
-            <ui5-link href="https://corona-azure.now.sh/" target="_blank" wrap>
+            <Link href="https://corona-azure.now.sh/" target="_blank" wrap>
               Why social distancing matters?
-            </ui5-link>
+            </Link>
           </li>
           <li>
-            <ui5-link
+            <Link
               href="https://www.washingtonpost.com/graphics/2020/world/corona-simulator/"
               target="_blank"
               wrap
             >
               Social Distancing Simulator - Flatten the curve
-            </ui5-link>
+            </Link>
           </li>
         </ul>
       </div>
