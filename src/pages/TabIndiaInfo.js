@@ -86,6 +86,13 @@ const TabIndiaInfo = ({ i18n }) => {
         <Title level="H3"> {i18n.ADDITIONAL_INFO} </Title>
         <ul>
           <li>
+            <Label>Apollo</Label>
+            {' :  '}
+            <Link href="https://covid.apollo247.com/" target="_blank">
+              {i18n.COVID_RISK_SCANNER}
+            </Link>
+          </li>
+          <li>
             <Label>Youtube (Ministry of Health) </Label>
             {' :  '}
             <Link href="https://www.mohfw.gov.in/FINAL_14_03_2020_Hindi.pdf" target="_blank" wrap>
