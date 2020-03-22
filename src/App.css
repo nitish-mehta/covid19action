@@ -104,3 +104,13 @@
 .subHeaderText{
   font-style: italic;
 }
+
+.disclaimerText{
+  font-style: italic;
+  font-size:11px;
+
+}
+
+.linkIcon {
+  margin-bottom: -3px;
+}
