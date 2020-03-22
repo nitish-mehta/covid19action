@@ -133,7 +133,7 @@ function App() {
           <Tab text={i18n.UNWELL} icon="stethoscope" selected={pathname === routes[0]}>
             <TabEligibilityChecker i18n={i18n} />
           </Tab>
-          <Tab text={i18n.INDIA} icon="notes" selected={pathname === routes[1]}>
+          <Tab icon="notes" selected={pathname === routes[1]}>
             <TabIndiaInfo i18n={i18n} />
           </Tab>
           <Tab text={''} icon="business-objects-experience" selected={pathname === routes[2]}>
