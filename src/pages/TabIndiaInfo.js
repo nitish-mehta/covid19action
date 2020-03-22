@@ -111,10 +111,12 @@ const TabIndiaInfo = ({ i18n }) => {
             </Link>
           </li>
           <li>
-            <Label>WHO</Label>
+            <WhatsappIcon class="linkIcon" size={20} round />
+            {'   '}
+            <Label>{i18n.WHATSAPP_HELPLINE}</Label>
             {' :  '}
             <Link href="https://api.whatsapp.com/send?phone=41798931892&text=hi&source=&data=">
-              {i18n.WHATSAPP_HELPLINE}
+              WHO
             </Link>
           </li>
         </ul>
