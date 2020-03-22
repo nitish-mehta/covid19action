@@ -3,6 +3,7 @@
  */
 import React, { useReducer } from 'react';
 
+import { useHistory } from 'react-router-dom';
 import { Button } from '@ui5/webcomponents-react/lib/Button';
 import { ButtonDesign } from '@ui5/webcomponents-react/lib/ButtonDesign';
 import { Dialog } from '@ui5/webcomponents-react/lib/Dialog';
@@ -87,8 +88,7 @@ const getAdditionalInfo = i18n => [
 
 const TabEligibilityChecker = ({ i18n }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  // TODO: Remove once fixed
-  //i18n = [];
+  const history = useHistory();
   const handleToggle = event => {
     dispatch({ type: 'toggle', payload: event.originalEvent.target.id });
   };
@@ -223,7 +223,13 @@ const TabEligibilityChecker = ({ i18n }) => {
         stretch={false}
         open={state.isResultDialogOpen}
         footer={
-          <Button className="eligibilityBtn" onClick={() => dispatch({ type: 'closeDialog' })}>
+          <Button
+            className="eligibilityBtn"
+            onClick={() => {
+              history.push('/india');
+              dispatch({ type: 'closeDialog' });
+            }}
+          >
             {state.resultCloseBtnText}
           </Button>
         }
