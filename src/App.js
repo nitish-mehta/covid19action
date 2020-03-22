@@ -11,9 +11,13 @@ import { Tab } from '@ui5/webcomponents-react/lib/Tab';
 
 import '@ui5/webcomponents-icons/dist/json-imports/Icons.js';
 
-import TabEligibilityChecker from './TabEligibilityChecker';
-import TabIndiaInfo from './TabIndiaInfo';
-import TabMoreInfo from './TabMoreInfo';
+import TabEligibilityChecker from './pages/TabEligibilityChecker';
+import TabIndiaInfo from './pages/TabIndiaInfo';
+import TabMoreInfo from './pages/TabMoreInfo';
+import NoMatch from './pages/NoMatch';
+
+import { Switch, Route, Link as RouterLink } from 'react-router-dom';
+import { routes } from './routes';
 
 import { changeCurrentLocale, getValidLocale } from './i18n/loadText.js';
 
@@ -50,6 +54,15 @@ function App() {
 
   return (
     <ThemeProvider>
+      {/* <Switch>
+        <Route path="/" render={props => <TabEligibilityChecker {...props} i18n={i18n} />} />
+        <Route path="/TabIndiaInfo" render={props => <TabIndiaInfo {...props} i18n={i18n} />} />
+        <Route path="/TabMoreInfo" render={props => <TabMoreInfo {...props} i18n={i18n} />} />
+        <Route key="404" render={props => <NoMatch {...props} i18n={i18n} />} />
+        {routes.map(routeProps => (
+          <Route {...routeProps} i18n={i18n} />
+        ))}
+      </Switch> */}
       <div className="App">
         <div className="Covid19App">
           <div className="headerShellBar">
