@@ -10,13 +10,25 @@ import { TabContainer } from '@ui5/webcomponents-react/lib/TabContainer';
 import { Tab } from '@ui5/webcomponents-react/lib/Tab';
 
 import '@ui5/webcomponents-icons/dist/json-imports/Icons.js';
+import { FlexBox } from '@ui5/webcomponents-react/lib/FlexBox';
 
 import TabEligibilityChecker from './TabEligibilityChecker';
 import TabIndiaInfo from './TabIndiaInfo';
 import TabMoreInfo from './TabMoreInfo';
 
 import { changeCurrentLocale, getValidLocale } from './i18n/loadText.js';
+import { ActionSheet } from '@ui5/webcomponents-react/lib/ActionSheet';
 
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  WhatsappShareButton,
+  TwitterShareButton,
+  FacebookIcon,
+  LinkedinIcon,
+  TwitterIcon,
+  WhatsappIcon,
+} from 'react-share';
 import './App.css';
 
 const initialState = {
@@ -68,6 +80,38 @@ function App() {
                 className="shellBarIconBtn"
                 onClick={() => dispatch({ type: 'openDialog' })}
               ></Button>
+              <ActionSheet
+                openBy={
+                  <Button
+                    design={ButtonDesign.Transparent}
+                    icon="share"
+                    className="shellBarIconBtn"
+                  />
+                }
+                placement={'Bottom'}
+              >
+                <FacebookShareButton
+                  url="https://myswastha.in/"
+                  quote={i18n.SHARING_TITLE}
+                  hashtag="#MySwastha #FlattenTheCurve"
+                >
+                  <FacebookIcon size={32} round={true} />
+                </FacebookShareButton>
+                <WhatsappShareButton url="https://myswastha.in/" title={i18n.SHARING_TITLE}>
+                  <WhatsappIcon size={32} round={true} />
+                </WhatsappShareButton>
+                <TwitterShareButton
+                  url="https://myswastha.in/"
+                  title={i18n.SHARING_TITLE}
+                  hashtags={['FlattenTheCurve', 'MySwastha']}
+                  via={['nitish_mehta']}
+                >
+                  <TwitterIcon size={32} round={true} />
+                </TwitterShareButton>
+                <LinkedinShareButton url="https://myswastha.in/" title={i18n.SHARING_TITLE}>
+                  <LinkedinIcon size={32} round={true} />
+                </LinkedinShareButton>
+              </ActionSheet>
             </div>
           </div>
 
@@ -93,7 +137,12 @@ function App() {
               </Button>
             }
           >
-            <div style={{ width: '300px', height: '300px' }}>
+            <div style={{ width: '300px', height: '400px' }}>
+              <Label wrap className="disclaimerText">
+                {i18n.WEBSITE_DISCLAIMER}
+              </Label>
+              <br />
+              <br />
               <Label wrap>{i18n.WEBSITE_DESCRIPTION_1}</Label>
               <br />
               <br />
@@ -118,6 +167,37 @@ function App() {
               <br />
               <br />
               <Label wrap>{i18n.WEBSITE_DESCRIPTION_5}</Label>
+              <br />
+              <br />
+              <FlexBox
+                justifyContent={'SpaceBetween'}
+                alignItems={'Stretch'}
+                direction={'Row'}
+                displayInline={false}
+                fitContainer
+              >
+                <FacebookShareButton
+                  url="https://myswastha.in/"
+                  quote={i18n.SHARING_TITLE}
+                  hashtag="#MySwastha #FlattenTheCurve"
+                >
+                  <FacebookIcon size={32} round={true} />
+                </FacebookShareButton>
+                <WhatsappShareButton url="https://myswastha.in/" title={i18n.SHARING_TITLE}>
+                  <WhatsappIcon size={32} round={true} />
+                </WhatsappShareButton>
+                <TwitterShareButton
+                  url="https://myswastha.in/"
+                  title={i18n.SHARING_TITLE}
+                  hashtags={['FlattenTheCurve', 'MySwastha']}
+                  via={['nitish_mehta']}
+                >
+                  <TwitterIcon size={32} round={true} />
+                </TwitterShareButton>{' '}
+                <LinkedinShareButton url="https://myswastha.in/" title={i18n.SHARING_TITLE}>
+                  <LinkedinIcon size={32} round={true} />
+                </LinkedinShareButton>
+              </FlexBox>
             </div>
           </Dialog>
 

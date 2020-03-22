@@ -4,16 +4,20 @@ import { Title } from '@ui5/webcomponents-react/lib/Title';
 import { Label } from '@ui5/webcomponents-react/lib/Label';
 import { Link } from '@ui5/webcomponents-react/lib/Link';
 
+import { WhatsappIcon } from 'react-share';
+
 const TabIndiaInfo = ({ i18n }) => {
   return (
     <div>
       <div>
         <Title level="H3">{i18n.T_TEST_CENTER_HELPLINE}</Title>
         <Label wrap className="subHeaderText">
-          (Last Updated : 20 March 2020)
+          (Last Updated : 22 March 2020)
         </Label>
         <ul>
           <li>
+            <WhatsappIcon class="linkIcon" size={20} round />
+            {'   '}
             <Label>{i18n.WHATSAPP_HELPLINE}</Label>
             {' :  '}
             <Link href="https://api.whatsapp.com/send?phone=919013151515&text=Hi&source=&data=">
