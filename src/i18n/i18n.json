@@ -62,13 +62,13 @@
   "R_QUARANTINE_LOW_TITLE" : "Self-Quarantine for 14 days",
   "R_QUARANTINE_LOW_GOVT_ADVISORY" : "As per the advisory, you must self-quarantine yourself for a period of 14 days. You should immediately contact government helpline numbers if you develop symptoms like fever, cough and breathing difficulty during this period.",
   "R_QUARANTINE_LOW_GENERAL_GUIDANCE" : "You seem to be in good health, but you might still be infected with no symptoms yet. In case of COVID-19, people with no symptoms can also transmit the virus. It's important that you self-quarantine yourself and practice social distancing to keep yourself & others around you safe. ",
-  "R_QUARANTINE_LOW_CLOSING_NOTE" : "Check next tab to understand why 'Social Distancing' matters. Don't forget to educate others about it and play the role of a savior in these troubled times :)",
+  "R_QUARANTINE_LOW_CLOSING_NOTE" : "Check the next tab to understand 'why Social Distancing is important'. Don't forget to educate others about it and play the role of a savior in these troubled times :)",
   "R_QUARANTINE_LOW_CLOSEBTN" : "Close",
 
   "R_SOCIAL_DISTANCING_TITLE" : "Practice Social Distancing",
   "R_SOCIAL_DISTANCING_GOVT_ADVISORY" : "You do not require a COVID-19 test. It's important to practice restrain and social distancing to protect yourself and remain healthy.",
   "R_SOCIAL_DISTANCING_GENERAL_GUIDANCE" : "You seem to be in good health- let's keep it that way. Practice social distancing and continue to keep yourself & others around you safe. ",
-  "R_SOCIAL_DISTANCING_CLOSING_NOTE" : "Check next tab to understand why 'Social Distancing' matters. Don't forget to educate others about the precautions and play the role of a savior in these troubled times :)",
+  "R_SOCIAL_DISTANCING_CLOSING_NOTE" : "CCheck the next tab to understand 'why Social Distancing is important'. Don't forget to educate others about it and play the role of a savior in these troubled times :)",
   "R_SOCIAL_DISTANCING_CLOSEBTN" : "Close",
   
   "ELIGIBILITY_TEST_BTN": "What should I do?",
