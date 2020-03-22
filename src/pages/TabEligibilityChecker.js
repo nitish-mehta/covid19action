@@ -87,7 +87,8 @@ const getAdditionalInfo = i18n => [
 
 const TabEligibilityChecker = ({ i18n }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  // TODO: Remove once fixed
+  //i18n = [];
   const handleToggle = event => {
     dispatch({ type: 'toggle', payload: event.originalEvent.target.id });
   };
