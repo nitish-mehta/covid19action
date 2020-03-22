@@ -9,9 +9,9 @@ import { Link } from '@ui5/webcomponents-react/lib/Link';
 import { TabContainer } from '@ui5/webcomponents-react/lib/TabContainer';
 import { Tab } from '@ui5/webcomponents-react/lib/Tab';
 
-import TabEligibilityChecker from './TabEligibilityChecker';
-import TabIndiaInfo from './TabIndiaInfo';
-import TabMoreInfo from './TabMoreInfo';
+import TabEligibilityChecker from './pages/TabEligibilityChecker';
+import TabIndiaInfo from './pages/TabIndiaInfo';
+import TabMoreInfo from './pages/TabMoreInfo';
 
 import { changeCurrentLocale, getValidLocale } from './i18n/loadText.js';
 
