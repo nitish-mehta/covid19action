@@ -1,14 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { ThemeProvider } from '@ui5/webcomponents-react/lib/ThemeProvider';
+
+import '@ui5/webcomponents-icons/dist/json-imports/Icons.js';
+
+import './index.css';
+
+import App from './App';
+
+import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <ThemeProvider>
+    <Router>
+      <App />
+    </Router>
+  </ThemeProvider>,
   document.getElementById('root')
 );
 
