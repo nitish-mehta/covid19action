@@ -48,6 +48,7 @@ _Translations and Content improvements by:_
 - [Rubina](https://twitter.com/Rubina_BigB_EF)
 - [Vijeth](https://github.com/VijethKC) - Kannada
 - [Sharad](https://github.com/pepsighan) - Nepali
+- [Saili](https://twitter.com/sailijadhav) - Marathi
 
 ### Sponsors
 Made possible with support from 
