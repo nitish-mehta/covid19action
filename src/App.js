@@ -129,7 +129,7 @@ function App() {
           </div>
         </div>
 
-        <TabContainer className="c19IconTab" showOverflow onItemSelect={handleTabSelect}>
+        <TabContainer className="c19IconTab" showOverflow onItemSelect={handleTabSelect} fixed>
           <Tab text={i18n.UNWELL} icon="stethoscope" selected={pathname === routes[0]}>
             <TabEligibilityChecker i18n={i18n} />
           </Tab>
