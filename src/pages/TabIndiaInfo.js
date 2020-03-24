@@ -16,7 +16,7 @@ const TabIndiaInfo = ({ i18n }) => {
         </Label>
         <ul>
           <li>
-            <WhatsappIcon class="linkIcon" size={20} round />
+            <WhatsappIcon className="linkIcon" size={20} round />
             {'   '}
             <Label>{i18n.WHATSAPP_HELPLINE}</Label>
             {' :  '}
@@ -111,7 +111,7 @@ const TabIndiaInfo = ({ i18n }) => {
             </Link>
           </li>
           <li>
-            <WhatsappIcon class="linkIcon" size={20} round />
+            <WhatsappIcon className="linkIcon" size={20} round />
             {'   '}
             <Label>{i18n.WHATSAPP_HELPLINE}</Label>
             {' :  '}

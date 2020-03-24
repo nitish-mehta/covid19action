@@ -2,8 +2,8 @@
  * @file Component managing the Eligibility Tab
  */
 import React, { useReducer } from 'react';
+import useReactRouter from 'use-react-router';
 
-import { useHistory } from 'react-router-dom';
 import { Button } from '@ui5/webcomponents-react/lib/Button';
 import { ButtonDesign } from '@ui5/webcomponents-react/lib/ButtonDesign';
 import { Dialog } from '@ui5/webcomponents-react/lib/Dialog';
@@ -88,7 +88,8 @@ const getAdditionalInfo = i18n => [
 
 const TabEligibilityChecker = ({ i18n }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const history = useHistory();
+  const { history } = useReactRouter();
+
   const handleToggle = event => {
     dispatch({ type: 'toggle', payload: event.originalEvent.target.id });
   };
@@ -226,8 +227,9 @@ const TabEligibilityChecker = ({ i18n }) => {
           <Button
             className="eligibilityBtn"
             onClick={() => {
-              history.push('/india');
               dispatch({ type: 'closeDialog' });
+
+              history.push('/india');
             }}
           >
             {state.resultCloseBtnText}
