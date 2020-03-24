@@ -59,8 +59,6 @@ function App() {
     location: { pathname },
   } = useReactRouter();
 
-  console.log(pathname);
-
   useEffect(() => {
     if (!routes.includes(pathname)) {
       history.replace(routes[0]);
