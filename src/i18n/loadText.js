@@ -62,10 +62,10 @@ const getValidLocale = () => {
       displayText: 'ಕನ್ನಡ (Kannada)',
       code: 'kn',
     },
-    {
-      displayText: 'বাংলা (Bengali)',
-      code: 'bn',
-    },
+    // {
+    //   displayText: 'বাংলা (Bengali)',
+    //   code: 'bn',
+    // },
     {
       displayText: 'मराठी (Marathi)',
       code: 'mr',
@@ -74,18 +74,18 @@ const getValidLocale = () => {
       displayText: 'தமிழ் (Tamil)',
       code: 'ta',
     },
-    {
-      displayText: 'తెలుగు (Telugu)',
-      code: 'te',
-    },
-    {
-      displayText: 'ગુજરાતી (Gujarati)',
-      code: 'gu',
-    },
-    {
-      displayText: 'પંજાબી (Punjabi)',
-      code: 'pa',
-    },
+    // {
+    //   displayText: 'తెలుగు (Telugu)',
+    //   code: 'te',
+    // },
+    // {
+    //   displayText: 'ગુજરાતી (Gujarati)',
+    //   code: 'gu',
+    // },
+    // {
+    //   displayText: 'પંજાબી (Punjabi)',
+    //   code: 'pa',
+    // },
     {
       displayText: 'नेपाली (Nepali)',
       code: 'ne',
