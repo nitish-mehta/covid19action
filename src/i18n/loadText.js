@@ -62,10 +62,10 @@ const getValidLocale = () => {
       displayText: 'ಕನ್ನಡ (Kannada)',
       code: 'kn',
     },
-    // {
-    //   displayText: 'বাংলা (Bengali)',
-    //   code: 'bn',
-    // },
+    {
+      displayText: 'বাংলা (Bengali)',
+      code: 'bn',
+    },
     {
       displayText: 'मराठी (Marathi)',
       code: 'mr',
