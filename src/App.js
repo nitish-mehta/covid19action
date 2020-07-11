@@ -10,6 +10,7 @@ import { TabContainer } from '@ui5/webcomponents-react/lib/TabContainer';
 import { Tab } from '@ui5/webcomponents-react/lib/Tab';
 import { ActionSheet } from '@ui5/webcomponents-react/lib/ActionSheet';
 import { FlexBox } from '@ui5/webcomponents-react/lib/FlexBox';
+import { MessageStrip } from '@ui5/webcomponents-react/lib/MessageStrip';
 
 import TabEligibilityChecker from './pages/TabEligibilityChecker';
 import TabIndiaInfo from './pages/TabIndiaInfo';
@@ -79,7 +80,14 @@ function App() {
     <div className="App">
       <div className="Covid19App">
         <div className="headerShellBar">
-          <div className="shellBarLeft" />
+          <div className="shellBarLeft">
+            <Button
+              design={ButtonDesign.Transparent}
+              icon="home"
+              className="shellBarBtn"
+              onClick={() => window.location.replace('https://myswastha.in/')}
+            ></Button>
+          </div>
           <div className="shellBarCenter">{i18n.HOME_TITLE}</div>
           <div className="shellBarRight">
             <Button
@@ -128,6 +136,24 @@ function App() {
             </ActionSheet>
           </div>
         </div>
+        <MessageStrip
+          className="archivedNotification"
+          icon={null}
+          noCloseButton={true}
+          noIcon={false}
+          type={'Warning'}
+        >
+          NOTE: This app has been archived. <br />
+          Kindly use{' '}
+          <Link href="https://www.mygov.in/aarogya-setu-app/" target="_blank" wrap>
+            Aarogya Setu{' '}
+          </Link>{' '}
+          app or{' '}
+          <Link href="https://www.mohfw.gov.in/" target="_blank" wrap>
+            Ministry of Health{' '}
+          </Link>{' '}
+          website for latest info. <b>Stay Safe &amp; Healthy !</b>
+        </MessageStrip>
 
         <TabContainer className="c19IconTab" showOverflow onItemSelect={handleTabSelect} fixed>
           <Tab text={i18n.UNWELL} icon="stethoscope" selected={pathname === routes[0]}>
