@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "@ui5/webcomponents-icons": "^1.0.0-rc.5",
     "@ui5/webcomponents-react": "^0.8.6",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
